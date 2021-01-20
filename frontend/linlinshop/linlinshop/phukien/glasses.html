@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glassses</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="../bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+
+    <script src="https://kit.fontawesome.com/1fdbb78d95.js" crossorigin="anonymous"></script>
+    <script src="../jquery/jquery-3.2.1.min.js"></script>
+    <script src="../bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: unset;
+
+
+        }
+
+        .img1 {
+            display: block;
+            padding: 0.2em;
+            height: 80px;
+            width: 80px;
+            background-color: white;
+            border-radius: 1em;
+
+
+
+        }
+
+        .h1 {
+
+            font-size: 7em;
+            text-align: center;
+            color: black;
+            padding: 0.1em;
+
+        }
+
+
+
+        .img3 {
+            height: 500px;
+            width: 420px;
+            margin-left: 1em;
+
+        }
+
+        .img4 {
+            height: 500px;
+            width: 420px;
+            margin-left: 1em;
+        }
+
+
+
+        .hr2 {
+            width: 200px;
+            border: solid;
+        }
+
+
+        .a2 {
+
+            font-size: 1.2em;
+
+            margin-left: 5em;
+        }
+
+        input {
+            width: 5em;
+        }
+
+        .a3 {
+            color: black;
+            font-weight: bolder;
+            text-decoration: none !important;
+            font-size: 0.5em;
+            padding: 1em;
+
+        }
+
+        .a4 {
+            font-size: 0.5em;
+            color: white;
+            font-weight: bolder;
+            text-decoration: none !important;
+        }
+
+        .a4:hover {
+            color: black;
+            text-decoration: white !important;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .imgcaro {
+            height: 600px;
+            width: 1400px;
+        }
+
+        .imglogo {
+            width: 700px;
+            height: 540px;
+        }
+
+
+
+        .imgbando {
+            max-width: 100%;
+            object-fit: cover;
+            height: auto;
+        }
+
+        .ashopping {
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .bordershopping {
+            border: unset;
+            overflow: hidden;
+            background-color:rgb(32, 32, 32);
+           
+
+        }
+
+        .bordershopping:hover {
+            background-color: salmon;
+        }
+
+        .nav-item :hover {
+            background-color: black;
+            border-radius: 1em;
+            color:white !important;
+        }
+
+        .abanhang {
+            text-decoration: none !important;
+            color: white !important;
+            font-weight: bolder !important;
+        }
+
+        .borderchonlua {
+            border-radius: 1em;
+        }
+
+
+        .dropdown-item:hover {
+            background-color: black;
+            color: white !important;
+        }
+
+        .dropdown-menu{
+            background-color: white !important;
+        }
+        h6 {
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: black; opacity: 0.9;">
+            <img class="img1" src="../home/logochinh.jpg">
+            <button style="background-color: black ; color: white; margin: auto;" class="navbar-toggler" data-target="#my-na"
+            data-toggle="collapse" aria-controls="my-na" aria-expanded="false" aria-label="Toggle navigation">
+            MENU OPTION
+        </button>
+
+        <ul class="navbar" style="margin:auto;">
+            <div id="my-na" class="collapse navbar-collapse">
+                <li class="nav-item active dropdown">
+                    <a  class="nav-link"  style=" font-size: 0.7em; color: white; font-weight: bolder;" href="../Pages.html">
+                        ALL PRODUCTS</a>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                        class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                        aria-haspopup="true" aria-expanded="false">WOMEN'S CLOTHING</a>
+
+                    <div class="dropdown-menu">
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../quan ao/quanaonu.html">All Women's Clothing</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../quan ao/shirt.html">Shirt</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../quan ao/trousers.html">Trousers</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../quan ao/setofclothes.html">Set of
+                            clothes</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../quan ao/dresses.html">Dresses</a>
+                    </div>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                        class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                        aria-haspopup="true" aria-expanded="false"> WOMEN'S SHOES</a>
+
+                    <div class="dropdown-menu">
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../giaydep/giaydep.html">All Women's Shose</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../giaydep/sandals.html">Sandals</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="../giaydep/shoes.html">Shoes</a>
+                    </div>
+                </li>
+                <li class="nav-item active dropdown">
+
+                    <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                        class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                        aria-haspopup="true" aria-expanded="false">WOMEN'S
+                        HANDBAGS</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="../tuixach/tuixach.html">All Women's Handbags</a>
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="../tuixach/handbag.html"> Hand bag</a>
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="../tuixach/squeeze.html">Squeeze</a>
+
+                    </div>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                        class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                        aria-haspopup="true" aria-expanded="false">ACCESSORIES FOR
+                        WOMEN</a>
+
+                    <div class="dropdown-menu">
+                        <a style="font-size: 0.7em;" href="phukien.html" class="dropdown-item">
+                            ALL ACCESSORIES FOR
+                            WOMEN</a>
+                          
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="watch.html">Watch</a>
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="hat.html">Hat</a>
+                        <a class="dropdown-item" style="font-size: 0.7em;" href="glasses.html">Glasses</a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <div style="padding: 0.5em; border-radius: 0.5em;">
+                <a style="font-size: 1.5em; margin: auto; font-weight: bolder;" href="../cart.html"><i
+                        style="color: white;" class="fa fa-shopping-bag"></i></a>
+            </div>
+
+        </form>
+    </nav>
+        <br><br><br><br>
+        <h1 style="text-align: center; font-size: 3.5em; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">LinLin Store</h1>
+        <div class="container">
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <nav class="nav nav-fill" style="background-color: whitesmoke;">
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black; " class="nav-link"
+                        href="../index.html"><i class="fas fa-home"></i> HOME<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black; "
+                        class="nav-link" href="../Pages.html"><i class="fas fa-store"></i> CATALOGS</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black;" class="nav-link"
+                        href="../contact.html"><i class="fas fa-id-card"></i> CONTACT US</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black;" class="nav-link"
+                                        href="../login.html"><i class="fas fa-lock"></i> LOGIN</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black;" class="nav-link"
+                                        href="../signup.html"><i class="fas fa-user-plus"></i> SIGN UP</a>
+                    </li>
+                    <li class="nav-item" >
+                        <a style="font-size: 1.2em; color:black;" class="nav-link"
+                        data-toggle="modal" href="#modalSearch"> <i class="fas fa-search"></i> SEARCH</a>
+                    </li>
+                </nav>
+            </div>
+            
+           
+         
+        </div>
+
+        <div class="modal fixed-right fade" id="modalSearch" tabindex="-1" role="dialog" style="display: none;"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-vertical" role="document">
+                <div class="modal-content">
+
+                    <!-- Close -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fe fe-x" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- Header-->
+                    <div class="modal-header line-height-fixed font-size-lg">
+                        <strong class="mx-auto">Search Products</strong>
+                    </div>
+
+                    <!-- Body: Form -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="sr-only" for="modalSearchCategories">Categories:</label>
+                                <select class="custom-select" id="modalSearchCategories">
+                                    <option selected="">All Categories</option>
+                                    <option>WOMEN'S CLOTHING</option>
+                                    <option>WOMEN'S SHOES</option>
+                                    <option>WOMEN'S HANDBAGS</option>
+                                    <option>ACCESSORIES FOR WOMEN</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input class="form-control" type="search" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-border" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+          
+    </header>
+
+    <section>
+        <div class="container">
+            <marquee style="color: black; background-color:white; margin: auto; border-radius: 1em;">- - - - Welcome to
+                our
+                store. Wish
+                you have a happy and happy shopping day. Thank you
+                - - - - </marquee>
+        </div>
+        <div class="container">
+            <div class="sanpham">
+                <br>
+                <div class="col-md-12">
+                    <div style="display: block; margin: left; background-color: black; padding: 0.5em; ">
+                        <h1 style="text-align: center; font-size: 2em; color: white; font-weight: bolder; ">GLASSES</h1>
+
+                    </div>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="bordershopping" style="overflow: auto;">
+                                <div id="carousel" class="carousel-fade " data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+
+                                            <a href=""><img class="imgbando" src="matkinh/matkinh2.jpg" alt=""></a>
+
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses1.html"><img class="imgbando" src="matkinh/matkinh2,1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses1.html"><img class="imgbando" src="matkinh/matkinh2,2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses1.html"><img class="imgbando" src="matkinh/matkinh2,3.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses1.html"><img class="imgbando" src="matkinh/matkinh2,4.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <a href="glasses1.html" class="abanhang">
+                                    <h6 style="font-weight: bolder; text-align: center; color: white;">Glasses 1</h6>
+                                </a>
+
+                                <h6 style="text-align: center; color: white; font-weight: bolder;">Price: 310$ </h6>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="bordershopping" style="overflow: auto;">
+                                <div id="carousel" class="carousel-fade " data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+
+                                            <a href="glasses2.html"><img class="imgbando" src="matkinh/matkinh3.jpg" alt=""></a>
+
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses2.html"><img class="imgbando" src="matkinh/matkinh3,1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses2.html"><img class="imgbando" src="matkinh/matkinh3,2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses2.html"><img class="imgbando" src="matkinh/matkinh3,3.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <br>
+
+                                <a class="abanhang" href="">
+                                    <h6 style="text-align: center; font-weight: bolder; color: white;">Glasses 2
+                                    </h6>
+                                </a>
+                                <h6 style="text-align: center; color: white; font-weight: bolder;">Price: 310$ </h6>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="bordershopping" style="overflow: auto;">
+                                <div id="carousel" class="carousel-fade " data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+
+                                            <a href="glasses3.html"><img class="imgbando" src="matkinh/matkinh4.jpg" alt=""></a>
+
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses3.html"><img class="imgbando" src="matkinh/matkinh4,1.jpg" alt=""></a>
+                                        </div>
+
+                                        <div class="carousel-item">
+                                            <a href="glasses3.html"><img class="imgbando" src="matkinh/matkinh4,2.jpg" alt=""></a>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+                                <br>
+                                <a class="abanhang" href="glasses3.html">
+                                    <h6 style="text-align: center; font-weight: bolder; color:white;">Glasses 3
+                                    </h6>
+                                </a>
+
+                                <h6 style="text-align: center; color: white; font-weight: bolder;">Price: 310$
+                                </h6>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="bordershopping" style="overflow: auto;">
+                                <div id="carousel" class="carousel-fade " data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+
+                                            <a href="glasses4.html"><img class="imgbando" src="matkinh/matkinh5.jpg" alt=""></a>
+
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses4.html"><img class="imgbando" src="matkinh/matkinh5,1.jpg" alt=""></a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <br>
+
+                                <a class="abanhang" href="glasses4.html">
+                                    <h6 style="font-weight: bolder; text-align: center; color: white;">Glasses 4
+                                    </h6>
+                                </a>
+
+                                <h6 style="text-align: center; color: white; font-weight: bolder; color: white;">
+                                    Price: 310$
+                                </h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="bordershopping" style="overflow: auto;">
+                                <div id="carousel" class="carousel-fade " data-ride="carousel">
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        <div class="carousel-item active">
+
+                                            <a href="glasses5.html"><img class="imgbando" src="matkinh/matkinh6.jpg" alt=""></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="glasses5.html"><img class="imgbando" src="matkinh/matkinh6,1.jpg" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <a href="glasses5.html" class="abanhang">
+                                    <h6 style="font-weight: bolder; text-align: center; color: white;">Glasses 5
+                                    </h6>
+                                </a>
+                                <h6 style="text-align: center; color: white; font-weight: bolder;">Price: 310$
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+        </div>
+    </section>
+
+    <footer>
+        <div style="background-color:black; padding: 1em;">
+            <div class="container">
+                <div class="col-md-12 col-sm-auto">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h2 style="color: white; font-size: 1.2em; ">NAVIGATION</h2>
+                            <nav>
+                                <ul class="navbar-nav">
+                                    <li><a class="a4" href="../index.html">HOME</a></li>
+                                    <li><a class="a4" href="../Pages.html">CATALOG</a></li>
+                                    <li><a class="a4" href="../contact.html">CONTACT US</a></li>
+                                    <li><a class="a4" href="../login.html">LOGIN</a></li>
+                                    <li><a class="a4" href="../signup.html">SIGN UP</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-3">
+                            <p style="color: white; font-size: 1.2em;">
+                                INFORMATION
+                            </p>
+                            <p style="color:white; font-size: 0.7em;">
+                                PHONE NUMBER:0927110910
+    
+                            </p>
+                            <p style="font-size: 0.7em; color: white;">
+                                ADDRESS: 20 STREET 1B AN LAC WARD, BINH TAN DISTRICT, HO CHI MINH CITY
+                            </p>
+    
+                            <p style="font-size: 0.7em; color: white;">@LinLinShop</p>
+    
+                        </div>
+    
+                        <div class="col-md-3">
+                            <nav>
+                                <p style="color:white; font-size: 1.2em;">FAQ</p>
+                                <ul class="navbar-nav">
+                                    <li><a class="a4" href="">TRANSPORT</a></li>
+                                    <li><a class="a4" href="">WARRANTY POLICY
+                                        </a></li>
+                                    <li><a class="a4" href="">RETURN POLICY</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+    
+                        <div class="col-md-3">
+    
+                            <p style="color: white; font-size: 1.2em;">FOLLOW US</p>
+                            <a style="padding: 0.5em;" href=""><i style="color:lightskyblue;"
+                                    class="fa fa-facebook"></i></a>
+                            <a style="padding: 0.4em;" href=""><i style="color:lightpink;" class="fa fa-instagram"></i></a>
+                            <a style="padding: 0.2em;" href=""><i style="color:lightseagreen;"
+                                    class="fa fa-twitter"></i></a>
+                            <a style="padding: 0.2em;" href=""><i style="color:white" class="fab fa-tiktok"></i></a>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </footer>
+
+</body>
+
+</html>
