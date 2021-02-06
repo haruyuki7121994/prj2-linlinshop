@@ -1,0 +1,178 @@
+* {
+    font-family: unset;
+
+
+}
+
+.img1 {
+    display: block;
+    padding: 0.2em;
+    height: 80px;
+    width: 80px;
+    background-color: white;
+    border-radius: 1em;
+}
+
+.h1 {
+
+    font-size: 7em;
+    text-align: center;
+    color: black;
+    padding: 0.1em;
+}
+
+.img3 {
+    height: 500px;
+    width: 420px;
+    margin-left: 1em;
+
+}
+
+.img4 {
+    height: 500px;
+    width: 420px;
+    margin-left: 1em;
+}
+
+
+
+
+.hr2 {
+    width: 200px;
+    border: solid;
+}
+
+
+.a2 {
+
+    font-size: 1.2em;
+    padding: 0.5em;
+}
+
+input {
+    width: 5em;
+}
+
+
+.a3 {
+    color: black;
+    font-weight: bolder;
+    text-decoration: none !important;
+    font-size: 0.5em;
+    padding: 1em;
+
+}
+
+.a4 {
+    font-size: 0.5em;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none !important;
+
+}
+
+.a4:hover {
+    color: white;
+    text-decoration: white !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.imgcaro {
+    /* height: 600px;
+    width: 1480px; */
+    max-width: 100%;
+    height: auto;
+
+}
+
+.bordercaro {
+
+
+    display: block;
+    margin: auto !important;
+    overflow: hidden;
+
+
+
+}
+
+.imglogo {
+    width: 730px;
+    height: 540px;
+    object-fit: cover;
+
+}
+
+.border {
+    overflow: hidden;
+    border-style: none !important;
+
+}
+
+.border:hover {
+    transform: translateY(1em);
+    transition: all ease-in-out 0.5s;
+
+}
+
+
+.imgbando {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+
+}
+
+.imgchay {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
+
+.ashopping {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.abanhang {
+    text-decoration: none !important;
+    color: black !important;
+
+    font-weight: bolder !important;
+}
+
+.bordershopping {
+    border: unset;
+    overflow: hidden;
+    background-color: rgb(32, 32, 32);
+
+
+}
+
+.bordershopping:hover {
+    background-color: salmon;
+
+}
+
+.nav-item :hover {
+    background-color: black;
+    border-radius: 1em;
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: white !important;
+}
+
+h6 {
+    font-size: 0.7em;
+
+}
