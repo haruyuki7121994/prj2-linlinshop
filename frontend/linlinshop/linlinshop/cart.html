@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/1fdbb78d95.js" crossorigin="anonymous"></script>
+
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+
+    <style>
+        * {
+            font-family: unset;
+
+
+        }
+
+        .img1 {
+            display: block;
+            padding: 0.2em;
+            height: 80px;
+            width: 80px;
+            background-color: white;
+            border-radius: 1em;
+        }
+
+        .nav-item :hover {
+            background-color: black;
+            border-radius: 1em;
+            color: white !important;
+        }
+
+        .h1 {
+
+            font-size: 7em;
+            text-align: center;
+            color: black;
+            padding: 0.1em;
+
+        }
+        .a2 {
+
+            font-size: 1.2em;
+            margin-left: 5em;
+        }
+
+        .a3 {
+            color: black;
+            font-weight: bolder;
+            text-decoration: none !important;
+            font-size: 0.5em;
+            padding: 1em;
+
+        }
+
+        .a4 {
+            font-size: 0.5em;
+            color: white;
+            font-weight: bolder;
+            text-decoration: none !important;
+
+        }
+
+        .a4:hover {
+            color: white;
+            text-decoration: white !important;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .borderlogin {
+            border-style: solid;
+            background-color: white;
+            padding: 2em;
+            margin: auto;
+            overflow: hidden;
+            width: 350px;
+            height: auto;
+        }
+
+        .img2 {
+            height: 300px;
+            width: 250px;
+            min-width: auto !important;
+            margin: auto !important;
+            display: block;
+
+        }
+
+        .a12 {
+            color: black;
+            font-size: 1em;
+        }
+
+        .dropdown-menu {
+            background-color: white !important;
+        }
+
+        .checkout__sidebar {
+            width: 570px;
+            flex: 0 0 auto;
+            padding: 80px 60px;
+            background: #f8f8f8;
+
+        }
+        .imggiohang{
+           max-width: 100%;
+           height: auto;
+        }
+        .soluong {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: black; opacity: 0.9;">
+            <img class="img1" src="home/logochinh.jpg">
+            <button style="background-color: black ; color: white; margin: auto;" class="navbar-toggler"
+                data-target="#my-na" data-toggle="collapse" aria-controls="my-na" aria-expanded="false"
+                aria-label="Toggle navigation">
+                MENU OPTION
+            </button>
+
+            <ul class="navbar" style="margin:auto;">
+                <div id="my-na" class="collapse navbar-collapse">
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link" style=" font-size: 0.7em; color: white; font-weight: bolder;"
+                            href="Pages.html">
+                            ALL PRODUCTS</a>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                            class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                            aria-haspopup="true" aria-expanded="false">WOMEN'S CLOTHING</a>
+
+                        <div class="dropdown-menu">
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/quanaonu.html">All Women's
+                                Clothing</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/shirt.html">Shirt</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/trousers.html">Trousers</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/setofclothes.html">Set of
+                                clothes</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/dresses.html">Dresses</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                            class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                            aria-haspopup="true" aria-expanded="false"> WOMEN'S SHOES</a>
+
+                        <div class="dropdown-menu">
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="giaydep/giaydep.html">All Women's
+                                Shose</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="giaydep/sandals.html">Sandals</a>
+                            <a style="font-size: 0.7em;" class="dropdown-item" href="giaydep/shoes.html">Shoes</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active dropdown">
+
+                        <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                            class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                            aria-haspopup="true" aria-expanded="false">WOMEN'S
+                            HANDBAGS</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="tuixach/tuixach.html">All Women's
+                                Handbags</a>
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="tuixach/handbag.html"> Hand bag</a>
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="tuixach/squeeze.html">Squeeze</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item active dropdown">
+                        <a style="font-weight: bolder; font-size: 0.7em; color: white; "
+                            class="nav-link dropdown-toggle" data-toggle="dropdown" href="Pages.html" role="button"
+                            aria-haspopup="true" aria-expanded="false">ACCESSORIES FOR
+                            WOMEN</a>
+
+                        <div class="dropdown-menu">
+                            <a style="font-size: 0.7em;" href="phukien/phukien.html" class="dropdown-item">
+                                ALL ACCESSORIES FOR
+                                WOMEN</a>
+
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="phukien/watch.html">Watch</a>
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="phukien/hat.html">Hat</a>
+                            <a class="dropdown-item" style="font-size: 0.7em;" href="phukien/glasses.html">Glasses</a>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <div style="padding: 0.5em; border-radius: 0.5em;">
+                    <a style="font-size: 1.5em; margin: auto; font-weight: bolder;" href=""><i style="color: white;"
+                            class="fa fa-shopping-bag"></i></a>
+                </div>
+
+            </form>
+        </nav>
+        <br><br><br><br>
+        <h1 style="text-align: center; font-size: 3.5em; font-weight: bolder; font-family: Verdana, Geneva, Tahoma, sans-serif;">LinLin Store</h1>
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <nav class="nav nav-fill" style="background-color: whitesmoke;">
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black; " class="nav-link" href="../index.html"><i
+                                class="fas fa-home"></i> HOME<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black; " class="nav-link" href="Pages.html"><i
+                                class="fas fa-store"></i> CATALOGS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="../contact.html"><i
+                                class="fas fa-id-card"></i> CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="../login.html"><i
+                                class="fas fa-lock"></i> LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="../signup.html"><i
+                                class="fas fa-user-plus"></i> SIGN UP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" data-toggle="modal"
+                            href="#modalSearch"> <i class="fas fa-search"></i> SEARCH</a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+
+        <div class="modal fixed-right fade" id="modalSearch" tabindex="-1" role="dialog" style="display: none;"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-vertical" role="document">
+                <div class="modal-content">
+
+                    <!-- Close -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="fe fe-x" aria-hidden="true"></i>
+                    </button>
+
+                    <!-- Header-->
+                    <div class="modal-header line-height-fixed font-size-lg">
+                        <strong class="mx-auto">Search Products</strong>
+                    </div>
+
+                    <!-- Body: Form -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="sr-only" for="modalSearchCategories">Categories:</label>
+                                <select class="custom-select" id="modalSearchCategories">
+                                    <option selected="">All Categories</option>
+                                    <option>WOMEN'S CLOTHING</option>
+                                    <option>WOMEN'S SHOES</option>
+                                    <option>WOMEN'S HANDBAGS</option>
+                                    <option>ACCESSORIES FOR WOMEN</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input class="form-control" type="search" placeholder="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-border" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <br>
+    <section>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="thongtin" style="background-color: whitesmoke; padding: 1em;">
+                            <fieldset>
+                            <form action="#">
+                                    <h1>Delivery information</h1>
+                                    <legend style="font-size: 0.8em;">You already have an account to log in now ? <a
+                                            style="text-decoration: none; color: orange;" href="login.html">Login</a></legend>   
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input class="form-control"  type="text" name="name" id="name" placeholder="Name" required>
+                                                </div>
+                                                <div class="col">
+                                                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="Phone" required>
+                                                </div>
+                                                
+                                            </div>
+                                   <br>
+                                    <input type="email" name="email" id="email" placeholder="Email" class="form-control" required><br>
+                                    <input type="text" name="address" id="address" placeholder="Address" class="form-control" required><br>
+                                     <input type="text" name="note" id="note" placeholder="Note" class="form-control"> <br>
+                                    
+                                     <div class="hinhthucthanhtoan">
+                                        <h1>Payment method</h1>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                <i class="fas fa-truck"></i>
+                                              COD (
+                                                Payment on delivery)
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                <i class="far fa-credit-card"></i>
+                                                Pay by credit card
+                                            </label>
+                                          </div>
+                                    </div><br>
+                                    <input type="submit" name="submit" id="submit" value="Order"  class="form-control" style="background-color:tomato; font-size: 1em;color:white;"><br>
+                            </form>
+                        </fieldset>
+                        </div>
+                       
+                    </div>
+                    <div class="col-md-4">
+                        <div class="giohang" style="background-color: whitesmoke; padding: 1em;">
+                            <div>
+                                <h1 style="text-align: center;">Your cart</h1>
+                                <hr>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <img src="quan ao/redfress/vaydo1.jpg" alt="" class="imggiohang">
+                                </div>
+
+                                <div class="col" style="background-color: white;">
+                                    <h4>Red dress 1</h4>
+                                    <label style="font-weight: bolder;">Color: </label> red <br>
+                                    <label style="font-weight: bolder;">Size: </label> S <br>
+                                    <label style="font-weight: bolder;">Price: </label> 120$ <br>
+                                    <div class="soluongsp">
+                                        <div><button style="width: 15%; background-color:black; color: white;" class="soluong">+</button><input
+                                                style="width: 40px; text-align: center; border: none; " type="text" value="1"><button
+                                                class="soluong" style="width: 15%;  background-color: black; color: whitesmoke;">-</button></div>
+                                    </div>
+                                </div><br>
+                                  
+                                
+                            </div>
+                            <br>
+                            <div class="tinhtien" style="background-color: white;">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" style="font-weight: bolder;">Provisional: </label>
+                                    </div>
+                                    <div class="col">
+                                     <p> 120$ </p>  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" style="font-weight: bolder;">
+                                            Vat: </label>
+                                    </div>
+                                    <div class="col">
+                                     <p style="color: tomato;">5%</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" style="font-weight: bolder;">
+                                            Delivery charges: </label>
+                                    </div>
+                                    <div class="col">
+                                     <p style="color: tomato;">10$</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="" style="font-weight: bolder;">Total: </label>
+                                    </div>
+                                    <div class="col">
+                                     <p style="color: tomato;">130$</p>
+                                    </div>
+                                </div>
+                               
+                               
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <footer>
+        <div style="background-color:black; padding: 1em;">
+            <div class="container">
+                <div class="col-md-12 col-sm-auto">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h2 style="color: white; font-size: 1.2em; ">NAVIGATION</h2>
+                            <nav>
+                                <ul class="navbar-nav">
+                                    <li><a class="a4" href="home.html">HOME</a></li>
+                                    <li><a class="a4" href="Pages.html">CATALOG</a></li>
+                                    <li><a class="a4" href="contact.html">CONTACT US</a></li>
+                                    <li><a class="a4" href="login.html">LOGIN</a></li>
+                                    <li><a class="a4" href="signup.html">SIGN UP</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-3">
+                            <p style="color: white; font-size: 1.2em;">
+                                INFORMATION
+                            </p>
+                            <p style="color: white; font-size: 0.7em;">
+                                PHONE NUMBER:0927110910
+
+                            </p>
+                            <p style="font-size: 0.7em; color: white;">
+                                ADDRESS: 20 STREET 1B AN LAC WARD, BINH TAN DISTRICT, HO CHI MINH CITY
+                            </p>
+
+                            <p style="font-size: 0.7em; color: white;">@LinLinShop</p>
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <nav>
+                                <p style="color: white;">FAQ</p>
+                                <ul class="navbar-nav">
+                                    <li><a class="a4" href="">TRANSPORT</a></li>
+                                    <li><a class="a4" href="">WARRANTY POLICY
+                                        </a></li>
+                                    <li><a class="a4" href="">RETURN POLICY</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <p style="color: white; font-size: 1.2em;">FOLLOW US</p>
+                            <a style="padding: 0.5em;" href=""><i style="color:lightskyblue;"
+                                    class="fa fa-facebook"></i></a>
+                            <a style="padding: 0.4em;" href=""><i style="color:lightpink;"
+                                    class="fa fa-instagram"></i></a>
+                            <a style="padding: 0.2em;" href=""><i style="color:lightseagreen;"
+                                    class="fa fa-twitter"></i></a>
+                            <a style="padding: 0.2em;" href=""><i style="color:white;" class="fab fa-tiktok"></i></a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

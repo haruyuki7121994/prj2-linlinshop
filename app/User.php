@@ -2,21 +2,25 @@
 
 namespace App;
 
+use App\Traits\ActiveTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, ActiveTrait;
 
+    const IS_ADMIN = 1;
+    const ACTIVE = 1;
+    const INACTIVE = 0;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'mobile', 'address', 'province_id', 'is_admin', 'is_active'
     ];
 
     /**
@@ -36,4 +40,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeIsAdmin($query)
+    {
+        return $query->whereIsAdmin(self::IS_ADMIN);
+    }
 }
