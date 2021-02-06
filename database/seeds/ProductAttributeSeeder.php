@@ -222,6 +222,83 @@ class ProductAttributeSeeder extends Seeder
             ['product_id' => 27, 'color_id' => 3, 'size' => 12, 'qty' => 10, 'price' => 310],
 
             ['product_id' => 28, 'color_id' => 4, 'size' => 12, 'qty' => 10, 'price' => 310],
+
+            ['product_id' => 29, 'color_id' => 2, 'size' => 12, 'qty' => 10, 'price' => 300],
+            ['product_id' => 29, 'color_id' => 3, 'size' => 12, 'qty' => 10, 'price' => 300],
+
+            ['product_id' => 30, 'color_id' => 10, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 30, 'color_id' => 10, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 30, 'color_id' => 10, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 31, 'color_id' => 10, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 31, 'color_id' => 10, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 31, 'color_id' => 10, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 32, 'color_id' => 2, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 32, 'color_id' => 2, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 32, 'color_id' => 2, 'size' => 4, 'qty' => 10, 'price' => 100],
+            ['product_id' => 32, 'color_id' => 3, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 32, 'color_id' => 3, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 32, 'color_id' => 3, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 33, 'color_id' => 5, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 33, 'color_id' => 5, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 33, 'color_id' => 5, 'size' => 4, 'qty' => 10, 'price' => 100],
+            ['product_id' => 33, 'color_id' => 2, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 33, 'color_id' => 2, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 33, 'color_id' => 2, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 34, 'color_id' => 1, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 1, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 1, 'size' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 3, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 3, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 3, 'size' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 5, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 5, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 5, 'size' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 4, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 4, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 4, 'size' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 2, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 2, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 2, 'size' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 12, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 12, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 34, 'color_id' => 12, 'size' => 4, 'qty' => 10, 'price' => 120],
+
+            ['product_id' => 35, 'color_id' => 5, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 35, 'color_id' => 5, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 35, 'color_id' => 5, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 77, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 77, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 77, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 120],
+
+            ['product_id' => 78, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 78, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 78, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 120],
+
+            ['product_id' => 79, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 130],
+            ['product_id' => 79, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 130],
+            ['product_id' => 79, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 130],
+
+            ['product_id' => 80, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 80, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 80, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 100],
+
+            ['product_id' => 81, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 81, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 81, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 120],
+
+            ['product_id' => 82, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 82, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 82, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 120],
+
+            ['product_id' => 83, 'color_id' => 13, 'size' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 83, 'color_id' => 13, 'size' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 83, 'color_id' => 13, 'size' => 4, 'qty' => 10, 'price' => 120],
+
         ]);
     }
 }
