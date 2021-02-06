@@ -25,6 +25,7 @@ class ColorSeeder extends Seeder
             ['id' => 10, 'name' => 'Pink', 'code' => '#f366c3', 'is_active' => \App\Color::ACTIVE],
             ['id' => 11, 'name' => 'Silver', 'code' => '#c0c0c0', 'is_active' => \App\Color::ACTIVE],
             ['id' => 12, 'name' => 'Blue', 'code' => '#19b5fe', 'is_active' => \App\Color::ACTIVE],
+            ['id' => 13, 'name' => 'None', 'code' => null, 'is_active' => \App\Color::ACTIVE],
         ]);
     }
 }
