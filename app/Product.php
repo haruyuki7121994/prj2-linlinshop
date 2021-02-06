@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     const IS_FEATURED = 1;
+    const NOT_FEATURED = 0;
 
     protected $table = 'products';
     protected $fillable = [
