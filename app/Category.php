@@ -4,6 +4,7 @@ namespace App;
 
 use App\Traits\ActiveTrait;
 use Illuminate\Database\Eloquent\Model;
+use Str;
 
 class Category extends Model
 {
