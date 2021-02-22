@@ -1,13 +1,9 @@
 @extends('cms.layout.master')
 @section('content')
-    @push('custom-css')
-        <!-- Internal Spectrum-colorpicker css -->
-        <link href="{{asset('cms/assets/plugins/spectrum-colorpicker/spectrum.css')}}" rel="stylesheet">
-    @endpush
     <!-- container -->
     <div class="container-fluid">
 
-        <x-breadcrumb category="Color" action="Create" />
+        <x-breadcrumb category="Category" action="Create" />
 
         <!-- row -->
         <div class="row row-sm">
@@ -18,32 +14,26 @@
                     </div>
                     <div class="card-body pt-0">
                         @include('cms.layout.message')
-                        <form class="form-horizontal" method="post" action="{{route('cms.color.store')}}" >
+                        <form class="form-horizontal" method="post" action="{{route('cms.color.update', $category->id)}}">
+                            @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{old('name')}}">
+                                <input type="text" value="{{old('name', $color->name)}}" class="form-control" id="inputName" name="name" placeholder="Name">
                             </div>
 
-                            <div class="form-group">
-                                <div class="row row-sm">
-                                    <div class="col-lg">
-                                        <label for="inputName">Pick Color: </label><input id="colorpicker" type="text">
-                                        <input type="text" class="form-control" id="code" placeholder="Color" name="code" value="{{old('color')}}">
-                                    </div>
-                                </div>
-
-
-                            </div>
+                            {{--                            <div class="form-group">--}}
+                            {{--                                <textarea class="form-control" placeholder="Note" rows="10"></textarea>--}}
+                            {{--                            </div>--}}
                             <div class="form-group mb-0 justify-content-end">
                                 <label for="inputName">Status: </label>
-                                <input type="hidden" name="is_active" id="btn-active" value="0">
-                                <div class="main-toggle main-toggle-secondary on">
+                                <input type="hidden" name="is_active" id="btn-active" value="{{old('is_active', $color->is_active)}}">
+                                <div class="main-toggle main-toggle-secondary {{$color->is_active == \App\Color::ACTIVE ? 'on' : ''}}">
                                     <span></span>
                                 </div>
                             </div>
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="submit" class="btn btn-secondary">Back</button>
                                 </div>
                             </div>
@@ -55,19 +45,8 @@
         <!-- row -->
     </div>
     <!-- Container closed -->
-    @push('custom-js')
-        <!--Internal  spectrum-colorpicker js -->
-        <script src="{{asset('cms/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>
-        <!-- Internal form-elements js -->
-        <script>
-            $( document ).ready(function() {
-                $('#colorpicker').spectrum({
-                    color: '#17A2B8'
-                });
-            });
-        </script>
-    @endpush
 @endsection
+
 @push('custom-js')
     <!-- Internal form-elements js -->
     <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
