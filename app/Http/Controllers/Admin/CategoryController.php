@@ -42,6 +42,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
+        if ($category->products()) redirect()->route('cms.category.index')->withErrors('Cannot delete category');
         return $category->delete()
             ? redirect()->route('cms.category.index')->withSuccess('Delete category is successful')
             : redirect()->route('cms.category.index')->withErrors('Cannot delete category');

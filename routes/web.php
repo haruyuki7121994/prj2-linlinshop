@@ -17,7 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('frontend.index');
+//binding
+Route::bind('collection', function ($key) {
+    return \App\Category::whereSlug($key)->first() ?? abort(404);
+});
+Route::bind('product', function ($key) {
+    return \App\Product::whereSlug($key)->first() ?? abort(404);
+});
+
+//frontend
+Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
+    Route::get('/home', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
+    Route::get('/collection/{collection}', [\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('collection');
+    Route::get('/product/{product}', [\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('product');
+
+    Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
+        Route::post('/add', [\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('add');
+    });
+});
 
 //admin
 Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {

@@ -8,8 +8,7 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="{{asset('plugin/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('asset/css/style.css')}}">
-
-
+    @stack('custom-css')
 </head>
 
 <body>
@@ -22,6 +21,7 @@
 
 <script src="{{asset('plugin/jquery/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('plugin/bootstrap/js/bootstrap.min.js')}}"></script>
+@stack('custom-js')
 </body>
 
 </html>
