@@ -16,3 +16,5 @@ php artisan migrate
 composer dump-autoload
 
 php artisan db:seed
+
+php artisan vendor:publish --provider="Darryldecode\Cart\CartServiceProvider" --tag="config"
