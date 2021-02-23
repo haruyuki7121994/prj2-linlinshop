@@ -36,59 +36,36 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Yellow</td>
-                                    <td><div style="color: yellow; width: 10px; height: 20px; border: 10px solid"></div></td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Red</td>
-                                    <td><div style="color: red; width: 10px; height: 20px; border: 10px solid"></div></td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Dark Green</td>
-                                    <td><div style="color: darkgreen; width: 10px; height: 20px; border: 10px solid"></div></td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Dark Sea Green</td>
-                                    <td><div style="color: darkseagreen; width: 10px; height: 20px; border: 10px solid"></div></td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Black</td>
-                                    <td><div style="color: black; width: 10px; height: 20px; border: 10px solid"></div></td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                    @foreach ($colors as $color)
+                                    <tr>
+                                        <th scope="row">{{$color->id}}</th>
+                                        <td>{{$color->name}}</td>
+                                        <td><div style="color:{{$color->code}}; width: 10px; height: 20px; border: 10px solid"></div></td>
+                                        <td>
+                                            @if($color->is_active == \App\Color::ACTIVE)
+                                            <a class="badge badge-success" href="#">Active</a>
+                                        @else
+                                            <a class="badge badge-danger" href="#">Inactive</a>
+                                        @endif
+                                        </td>
+                                        <td>
+                                            <x-button classType="success">
+                                                <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                                {{route('cms.color.edit', $color->id)}}
+                                            </x-button>
+                                            <x-delete-form>
+                                                {{route('cms.color.destroy', $color->id)}}
+                                            </x-delete-form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                  
+                                  
+                               
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $colors->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>
