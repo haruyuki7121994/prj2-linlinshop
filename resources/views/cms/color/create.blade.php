@@ -37,7 +37,7 @@
                             <div class="form-group mb-0 justify-content-end">
                                 <label for="inputName">Status: </label>
                                 <input type="hidden" name="is_active" id="btn-active" value="0">
-                                <div class="main-toggle main-toggle-secondary on">
+                                <div class="main-toggle main-toggle-secondary">
                                     <span></span>
                                 </div>
                             </div>
@@ -58,25 +58,18 @@
     @push('custom-js')
         <!--Internal  spectrum-colorpicker js -->
         <script src="{{asset('cms/assets/plugins/spectrum-colorpicker/spectrum.js')}}"></script>
+        <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
         <!-- Internal form-elements js -->
         <script>
             $( document ).ready(function() {
                 $('#colorpicker').spectrum({
                     color: '#17A2B8'
                 });
+                $('.main-toggle').click(function() {
+                    let className = this.className
+                    className.includes(' on') ? $('#btn-active').val(1) : $('#btn-active').val(0)
+                });
             });
         </script>
     @endpush
 @endsection
-@push('custom-js')
-    <!-- Internal form-elements js -->
-    <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
-    <script>
-        $( document ).ready(function() {
-            $('.main-toggle').click(function() {
-                let className = this.className
-                className.includes(' on') ? $('#btn-active').val(1) : $('#btn-active').val(0)
-            });
-        });
-    </script>
-@endpush

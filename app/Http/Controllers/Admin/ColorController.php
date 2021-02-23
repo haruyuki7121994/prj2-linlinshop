@@ -21,9 +21,7 @@ class ColorController extends Controller
     }
 
     public function store(CreateRequest $request)
-    
     {
-      
         return Color::create($request->validated())
             ? redirect()->route('cms.color.index')->withSuccess('Create new color is successful')
             : redirect()->route('cms.color.index')->withErrors('Cannot create new color');
