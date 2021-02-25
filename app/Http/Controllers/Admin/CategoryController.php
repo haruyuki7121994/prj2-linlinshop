@@ -22,7 +22,7 @@ class CategoryController extends Controller
     }
 
     public function store(CreateRequest $request)
-    
+
     {
         return Category::create($request->validated())
             ? redirect()->route('cms.category.index')->withSuccess('Create new category is successful')
@@ -43,7 +43,7 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        if ($category->products()) redirect()->route('cms.category.index')->withErrors('Cannot delete category');
+        if (count($category->products) > 0) return redirect()->route('cms.category.index')->withErrors('Cannot delete category');
         return $category->delete()
             ? redirect()->route('cms.category.index')->withSuccess('Delete category is successful')
             : redirect()->route('cms.category.index')->withErrors('Cannot delete category');

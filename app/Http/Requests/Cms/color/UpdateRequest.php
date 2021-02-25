@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
         return [
             'is_active' => 'required|in:0,1',
             'name' => 'required',
-            'slug' => 'required_if:name,string',
+           
         ];
     }
 

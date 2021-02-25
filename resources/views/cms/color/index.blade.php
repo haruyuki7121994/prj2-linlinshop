@@ -24,6 +24,7 @@
                     </div>
 
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>

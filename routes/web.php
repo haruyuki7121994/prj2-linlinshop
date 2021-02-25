@@ -22,6 +22,7 @@ Route::bind('collection', function ($key) {
     return \App\Category::whereSlug($key)->first() ?? abort(404);
 });
 Route::bind('product', function ($key) {
+    if (is_numeric($key)) return \App\Product::find($key) ?? abort(404);
     return \App\Product::whereSlug($key)->first() ?? abort(404);
 });
 
@@ -51,6 +52,9 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {
     Route::resource('size', 'Admin\SizeController')->except(['show']);
     Route::resource('transport', 'Admin\TransportController')->except(['show']);
     Route::resource('product', 'Admin\ProductController')->except(['show']);
+
+    //file upload
+    Route::post('/upload-file', [\App\Http\Controllers\Admin\ImageController::class, 'upload'])->name('upload');
 });
 
 

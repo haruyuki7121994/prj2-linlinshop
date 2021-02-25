@@ -32,4 +32,21 @@ class ColorController extends Controller
         return view('cms.color.edit', compact('color'));
     }
 
+    public function update(Color $color, UpdateRequest $request)
+    {
+        return $color->update($request->validated())
+            ? redirect()->route('cms.color.index')->withSuccess('Update color is successful')
+            : redirect()->route('cms.color.index')->withErrors('Cannot update color');
+    }
+
+    public function destroy(Color $color)
+    {  
+        
+        if (count($color->productAttrs)>0) return redirect()->route('cms.color.index')->withErrors('Cannot delete color');
+      
+        return $color->delete($color->id)
+            ? redirect()->route('cms.color.index')->withSuccess('Delete color is successful')
+            : redirect()->route('cms.color.index')->withErrors('Cannot delete color');
+    }
+
 }

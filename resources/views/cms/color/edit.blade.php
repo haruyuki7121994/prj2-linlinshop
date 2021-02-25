@@ -3,7 +3,7 @@
     <!-- container -->
     <div class="container-fluid">
 
-        <x-breadcrumb category="Category" action="Create" />
+        <x-breadcrumb category="Color" action="Create" />
 
         <!-- row -->
         <div class="row row-sm">
@@ -13,10 +13,12 @@
                         <h4 class="card-title mb-1">Create New Color</h4>
                     </div>
                     <div class="card-body pt-0">
+                        
                         @include('cms.layout.message')
-                        <form class="form-horizontal" method="post" action="{{route('cms.color.update', $category->id)}}">
+                        <form class="form-horizontal" method="post" action="{{route('cms.color.update', $color->id)}}">
                             @method('PUT')
                             @csrf
+                            
                             <div class="form-group">
                                 <input type="text" value="{{old('name', $color->name)}}" class="form-control" id="inputName" name="name" placeholder="Name">
                             </div>
