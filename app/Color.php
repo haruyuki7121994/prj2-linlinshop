@@ -16,8 +16,11 @@ class Color extends Model
         'code', 'name', 'is_active'
     ];
 
+ 
     public function productAttrs()
     {
         return $this->hasMany(ProductAttribute::class, 'color_id');
     }
+    
+    
 }
