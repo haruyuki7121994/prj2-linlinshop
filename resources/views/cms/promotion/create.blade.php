@@ -13,10 +13,11 @@
                         <h4 class="card-title mb-1">Create New Promotion</h4>
                     </div>
                     <div class="card-body pt-0">
-                        <form class="form-horizontal" >
-
+                        @include('cms.layout.message')
+                        <form class="form-horizontal" method="post" action="{{route('cms.promotion.store')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                <input type="text" name="name" value="{{old('name')}}" class="form-control" id="inputName" placeholder="Name">
                             </div>
                             <div class="row row-sm" style="margin-bottom: 15px">
 
@@ -26,7 +27,7 @@
                                         <div class="input-group-text">
                                             From Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                    </div><input class="form-control fc-datepicker" name="from_date" placeholder="YYYY-MM-DD" type="text">
                                 </div>
                             </div>
 
@@ -36,7 +37,7 @@
                                         <div class="input-group-text">
                                             To Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text">
+                                    </div><input class="form-control fc-datepicker" name="to_date" placeholder="YYYY-MM-DD" type="text">
                                 </div>
                             </div>
 
@@ -46,19 +47,20 @@
                                         <div class="input-group-text">
                                             %
                                         </div>
-                                    </div><input class="form-control" placeholder="Percentage" type="text">
+                                    </div><input name="percentage" class="form-control" placeholder="Percentage" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Note" rows="10"></textarea>
+                                <textarea class="form-control" name="note" placeholder="Note" rows="10"></textarea>
                             </div>
-                            <div class="form-group">
-                                <input type="file" class="dropify" data-height="200" />
-                            </div>
+{{--                            <div class="form-group">--}}
+{{--                                <input type="file" class="dropify" data-height="200" />--}}
+{{--                            </div>--}}
                             <div class="form-group mb-0 justify-content-end">
                                 <label for="inputName">Status: </label>
-                                <div class="main-toggle main-toggle-secondary on">
+                                <input type="hidden" name="is_active" id="btn-active" value="0">
+                                <div class="main-toggle main-toggle-secondary">
                                     <span></span>
                                 </div>
                             </div>
@@ -78,4 +80,16 @@
         <!-- row -->
     </div>
     <!-- Container closed -->
+    @push('custom-js')
+        <!-- Internal form-elements js -->
+        <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
+        <script>
+            $( document ).ready(function() {
+                $('.main-toggle').click(function() {
+                    let className = this.className
+                    className.includes(' on') ? $('#btn-active').val(1) : $('#btn-active').val(0)
+                });
+            });
+        </script>
+    @endpush
 @endsection

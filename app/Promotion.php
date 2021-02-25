@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Promotion extends Model
 {
-    protected $table = 'promotion';
+    protected $table = 'promotions';
     protected $fillable = [
         'name', 'from_date', 'end_date', 'is_active',
         'note', 'image_url', 'percentage'
