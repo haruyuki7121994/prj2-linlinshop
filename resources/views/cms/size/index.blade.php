@@ -24,6 +24,7 @@
                     </div>
 
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
@@ -35,54 +36,32 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>S</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>M</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>L</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>XL</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>XXL</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                    @foreach($sizes as $size)
+                                    <tr>
+                                        <th scope="row">{{$size->id}}</th>
+                                        <td>{{$size->name}}</td>
+                                        <td>
+                                            @if($size->is_active == \App\Category::ACTIVE)
+                                                <a class="badge badge-success" href="#">Active</a>
+                                            @else
+                                                <a class="badge badge-danger" href="#">Inactive</a>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <x-button classType="success">
+                                                <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                                {{route('cms.size.edit', $size->id)}}
+                                            </x-button>
+                                            <x-delete-form>
+                                                {{route('cms.size.destroy', $size->id)}}
+                                            </x-delete-form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $sizes->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>
