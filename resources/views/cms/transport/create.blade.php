@@ -13,19 +13,20 @@
                         <h4 class="card-title mb-1">Create New Transport</h4>
                     </div>
                     <div class="card-body pt-0">
-                        <form class="form-horizontal" >
-
+                        @include('cms.layout.message')
+                        <form class="form-horizontal" method="post" action="{{route('cms.transport.store')}}">
+                            @csrf
                             <div class="form-group">
-                                <select name="" id="" class="form-control">
+                                <select name="province_id" id="" class="form-control">
                                     <option value="">Select Province</option>
-                                    <option value="">New York</option>
-                                    <option value="">California</option>
-                                    <option value="">Seattle</option>
+                                    @foreach($provinces as $province)
+                                        <option value="{{$province->id}}">{{$province->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Price">
+                                <input type="number" name="price" value="{{old('price')}}" class="form-control" id="inputName" placeholder="Price">
                             </div>
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>

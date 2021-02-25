@@ -13,10 +13,24 @@
                         <h4 class="card-title mb-1">Create New Province</h4>
                     </div>
                     <div class="card-body pt-0">
-                        <form class="form-horizontal" >
-
+                        @include('cms.layout.message')
+                        <form class="form-horizontal" method="post" action="{{route('cms.province.store')}}">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                <input type="text" name="name" value="{{old('name')}}" class="form-control" id="inputName" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <select name="type" id="" class="form-control">
+                                    <option value="Tỉnh">Tỉnh</option>
+                                    <option value="Thành phố Trung ương">Thành phố Trung ương</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-0 justify-content-end">
+                                <label for="inputName">Status: </label>
+                                <input type="hidden" name="is_active" id="btn-active" value="0">
+                                <div class="main-toggle main-toggle-secondary">
+                                    <span></span>
+                                </div>
                             </div>
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>
@@ -32,4 +46,16 @@
         <!-- row -->
     </div>
     <!-- Container closed -->
+    @push('custom-js')
+        <!-- Internal form-elements js -->
+        <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
+        <script>
+            $( document ).ready(function() {
+                $('.main-toggle').click(function() {
+                    let className = this.className
+                    className.includes(' on') ? $('#btn-active').val(1) : $('#btn-active').val(0)
+                });
+            });
+        </script>
+    @endpush
 @endsection
