@@ -31,4 +31,9 @@ class ProductAttribute extends Model
     {
         return $this->belongsTo(Promotion::class, 'promotion_id');
     }
+
+    public function images()
+    {
+        return $this->hasOne(Image::class, 'product_attr_id');
+    }
 }

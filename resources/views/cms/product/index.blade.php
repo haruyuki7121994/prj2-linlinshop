@@ -24,6 +24,7 @@
                     </div>
 
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
@@ -31,82 +32,38 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th>Qty</th>
                                     <th>Featured</th>
-                                    <th>Status</th>
-                                    <th>Image</th>
                                     <th>Active</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($products as $product)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>T-Shirt 1</td>
-                                    <td>T-Shirt</td>
-                                    <td>15</td>
-                                    <td>Yes</td>
-                                    <td>Active</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
+                                    <th scope="row">{{$product->id}}</th>
+                                    <td>{{$product->name}}</td>
+                                    <td>{{$product->category->name}}</td>
                                     <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        @if($product->is_featured == \App\Product::IS_FEATURED)
+                                            <a class="badge badge-success" href="#">Yes</a>
+                                        @else
+                                            <a class="badge badge-danger" href="#">No</a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <x-button classType="success">
+                                            <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                            {{route('cms.product.edit', $product->id)}}
+                                        </x-button>
+                                        <x-delete-form>
+                                            {{route('cms.product.destroy', $product->id)}}
+                                        </x-delete-form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>T-Shirt 2</td>
-                                    <td>T-Shirt</td>
-                                    <td>30</td>
-                                    <td>Yes</td>
-                                    <td>Active</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>T-Shirt 3</td>
-                                    <td>T-Shirt</td>
-                                    <td>2</td>
-                                    <td>Yes</td>
-                                    <td>Inactive</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Shirt 1</td>
-                                    <td>Shirt</td>
-                                    <td>10</td>
-                                    <td>Yes</td>
-                                    <td>Active</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Shirt 2</td>
-                                    <td>Shirt</td>
-                                    <td>20</td>
-                                    <td>Yes</td>
-                                    <td>Active</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $products->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>

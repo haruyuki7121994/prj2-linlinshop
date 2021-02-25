@@ -10,7 +10,7 @@
             <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                 <div class="card  box-shadow-0">
                     <div class="card-header">
-                        <h4 class="card-title mb-1">Create New Category</h4>
+                        <h4 class="card-title mb-1">Edit Category</h4>
                     </div>
                     <div class="card-body pt-0">
                         @include('cms.layout.message')
