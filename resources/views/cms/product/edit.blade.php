@@ -10,31 +10,32 @@
             <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                 <div class="card  box-shadow-0">
                     <div class="card-header">
-                        <h4 class="card-title mb-1">Create New Product</h4>
+                        <h4 class="card-title mb-1">Edit New Product</h4>
                     </div>
                     <div class="card-body pt-0">
                         @include('cms.layout.message')
-                        <form class="form-horizontal" method="post" action="{{route('cms.product.store')}}" >
+                        <form class="form-horizontal" method="post" action="{{route('cms.product.update', $product->id)}}">
                             @csrf
+                            @method('PUT')
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{old('name')}}">
+                                <input type="text" class="form-control" id="inputName" placeholder="Name" name="name" value="{{old('name', $product->name)}}">
                             </div>
 
                             <div class="form-group">
                                 <select name="category_id" id="" class="form-control">
                                     <option value="">Select Category</option>
                                     @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <option {{$product->category_id == $category->id ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" id="note" placeholder="Description" cols="10" name="description"></textarea>
+                                <textarea class="form-control" id="note" placeholder="Description" cols="10" name="description">{{$product->description}}</textarea>
                             </div>
                             <div class="form-group mb-0 justify-content-end">
                                 <label for="inputName">Status: </label>
-                                <input type="hidden" name="is_featured" id="btn-active" value="0">
-                                <div class="main-toggle main-toggle-secondary">
+                                <input type="hidden" name="is_featured" id="btn-active" value="{{old('is_featured', $product->is_featured)}}">
+                                <div class="main-toggle main-toggle-secondary {{$category->is_active == \App\Category::ACTIVE ? 'on' : ''}}">
                                     <span></span>
                                 </div>
                             </div>
@@ -59,6 +60,19 @@
                                         </tr>
                                         </thead>
                                         <tbody id="variant-table">
+                                        @foreach($variants as $variant)
+                                            <tr data-id="{{$variant->id}}">
+                                                <th><img width="200" style="object-fit: contain" src="{{$variant->images->url ?? ''}}" alt=""></th>
+                                                <td>{{$variant->size->name}}</td>
+                                                <td>{{$variant->color->name}}</td>
+                                                <td>{{$variant->qty}}</td>
+                                                <td>{{$variant->price}}$</td>
+                                                <td>
+                                                    <span class="btn btn-primary"><i class="fa fa-eye"></i></span>
+                                                    <span class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></span>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div><!-- bd -->
