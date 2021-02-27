@@ -22,8 +22,8 @@
                             </div>
                             <div class="form-group">
                                 <select name="type" id="" class="form-control">
-                                    <option value="Tỉnh">Tỉnh</option>
-                                    <option value="Thành phố Trung ương">Thành phố Trung ương</option>
+                                    <option value="Tỉnh" {{old('type', $province->type) === 'Tỉnh' ? 'selected' : ''}}>Tỉnh</option>
+                                    <option value="Thành phố Trung ương" {{old('type', $province->type) === 'Thành phố Trung ương' ? 'selected' : ''}}>Thành phố Trung ương</option>
                                 </select>
                             </div>
                             <div class="form-group mb-0 justify-content-end">

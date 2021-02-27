@@ -32,8 +32,8 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
-                        <a class="dropdown-item" href="page-signin.html"><i class="bx bx-log-out"></i> Sign Out</a>
+                        <a class="dropdown-item" href="{{route('cms.profile')}}"><i class="bx bx-cog"></i> Edit Profile</a>
+                        <a class="dropdown-item" href="{{route('auth.logout')}}"><i class="bx bx-log-out"></i> Sign Out</a>
                     </div>
                 </div>
             </div>

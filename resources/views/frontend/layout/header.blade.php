@@ -20,7 +20,7 @@
                             class="fas fa-id-card"></i> CONTACT US</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="../login.html"><i
+                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.login.index')}}"><i
                             class="fas fa-lock"></i> LOGIN</a>
                 </li>
                 <li class="nav-item">

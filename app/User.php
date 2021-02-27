@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $query->whereIsAdmin(self::IS_ADMIN);
     }
+
+    public function isAdmin()
+    {
+        return $this->is_admin === self::IS_ADMIN;
+    }
 }

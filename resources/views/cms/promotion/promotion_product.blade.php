@@ -42,7 +42,7 @@
 
                             <div class="row row-sm">
                                 <div class="col-lg">
-                                    <button class="btn btn-success">Add Product</button>
+                                    <a class="btn btn-success" data-target="#modaldemo1" data-toggle="modal" href="">Add Product</a>
                                 </div>
                             </div>
 
@@ -101,4 +101,5 @@
         <!-- row -->
     </div>
     <!-- Container closed -->
+    <x-add-promotion-product :products="$products" :promotion="$promotion"></x-add-promotion-product>
 @endsection

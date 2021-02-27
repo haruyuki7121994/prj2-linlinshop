@@ -31,61 +31,30 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($users as $user)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>joan_powell@gmail.com</td>
-                                    <td>Joan Powell</td>
-                                    <td>5</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>gavin_gibson@gmail.com</td>
-                                    <td>Gavin Gibson</td>
+                                    <th scope="row">{{$user->id}}</th>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->name}}</td>
                                     <td>0</td>
-                                    <td>Inactive</td>
                                     <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        @if($user->is_active == \App\User::ACTIVE)
+                                            <a class="badge badge-success" href="#">Active</a>
+                                        @else
+                                            <a class="badge badge-danger" href="#">Inactive</a>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <x-button classType="success">
+                                            <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                            {{route('cms.user.edit', $user->id)}}
+                                        </x-button>
+                                        <x-delete-form>
+                                            {{route('cms.user.destroy', $user->id)}}
+                                        </x-delete-form>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>julian_kerr@gmail.com</td>
-                                    <td>Julian Kerr</td>
-                                    <td>3</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>cedric_kelly@gmail.com</td>
-                                    <td>Cedric Kelly</td>
-                                    <td>0</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>samantha_may@gmail.com</td>
-                                    <td>Samantha May</td>
-                                    <td>0</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->

@@ -28,7 +28,7 @@
                                         <div class="input-group-text">
                                             From Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" name="from_date" d="from_date" value="{{old('from_date')}}" placeholder="YYYY-MM-DD" type="text">
+                                    </div><input class="form-control fc-datepicker" name="from_date" d="from_date" value="{{old('from_date', $promotion->from_date)}}" placeholder="YYYY-MM-DD" type="text">
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@
                                         <div class="input-group-text">
                                             End Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" name="end_date" id="end_date" value="{{old('end_date')}}" placeholder="YYYY-MM-DD" type="text">
+                                    </div><input class="form-control fc-datepicker" name="end_date" id="end_date" value="{{old('end_date', $promotion->end_date)}}" placeholder="YYYY-MM-DD" type="text">
                                 </div>
                             </div>
 
@@ -48,12 +48,12 @@
                                         <div class="input-group-text">
                                             %
                                         </div>
-                                    </div><input name="percentage" id="percentage" class="form-control" value="{{old('percentage')}}" placeholder="Percentage" type="text">
+                                    </div><input name="percentage" id="percentage" class="form-control" value="{{old('percentage', $promotion->percentage)}}" placeholder="Percentage" type="text">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control" name="note" id="note" value="{{old('note')}}" placeholder="Note" rows="10"></textarea>
+                                <textarea class="form-control" name="note" id="note" placeholder="Note" rows="10">{{old('note', $promotion->note)}}</textarea>
                             </div>
 {{--                            <div class="form-group">--}}
 {{--                                <input type="file" class="dropify" data-height="200" />--}}

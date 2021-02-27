@@ -32,14 +32,17 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
     Route::get('/collection/{collection}', [\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('collection');
     Route::get('/product/{product}', [\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('product');
 
+    //cart
     Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
         Route::post('/add', [\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('add');
     });
 });
 
 //admin
-Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {
+Route::group(['prefix' => 'cms', 'as' => 'cms.', 'middleware' => 'admin'], function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
+
+    Route::get('/profile', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('profile');
 
     Route::resource('user', 'Admin\UserController')->except(['store', 'create', 'show']);
     Route::resource('banner', 'Admin\BannerController')->except(['show']);
@@ -47,7 +50,8 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {
     Route::resource('color', 'Admin\ColorController')->except(['show']);
     Route::resource('comment', 'Admin\CommentController')->except(['show']);
     Route::resource('order', 'Admin\OrderController')->except(['show']);
-    Route::resource('promotion', 'Admin\PromotionController')->except(['show']);
+    Route::resource('promotion', 'Admin\PromotionController');
+    Route::get('/promotion/{promotion}/add', [\App\Http\Controllers\Admin\PromotionController::class, 'add'])->name('promotion.add');
     Route::resource('province', 'Admin\ProvinceController')->except(['show']);
     Route::resource('size', 'Admin\SizeController')->except(['show']);
     Route::resource('transport', 'Admin\TransportController')->except(['show']);
@@ -57,4 +61,12 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.'], function () {
     Route::post('/upload-file', [\App\Http\Controllers\Admin\ImageController::class, 'upload'])->name('upload');
 });
 
+//auth
+
+//auth
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
+    Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login.index');
+    Route::post('/login/authenticate', [\App\Http\Controllers\Auth\AuthController::class, 'authenticate'])->name('login.authenticate');
+    Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
+});
 

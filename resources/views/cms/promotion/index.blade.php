@@ -61,7 +61,10 @@
                                             <x-delete-form>
                                                 {{route('cms.promotion.destroy', $promotion->id)}}
                                             </x-delete-form>
-                                            <a href="promotion_product.html"><button class="btn btn-primary" style="width: 50px"><i class="fa fa-plus"></i></button></a>
+                                            <x-button classType="primary">
+                                                <x-slot name="action"><i class="fa fa-plus"></i></x-slot>
+                                                {{route('cms.promotion.show', $promotion->id)}}
+                                            </x-button>
                                         </td>
                                     </tr>
                                     @endforeach
