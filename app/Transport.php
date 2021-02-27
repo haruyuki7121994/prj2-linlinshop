@@ -15,4 +15,9 @@ class Transport extends Model
     {
         return $this->belongsTo(Province::class, 'province_id');
     }
+    public function productAttrs()
+    {
+        return $this->hasMany(order::class, 'province_id');
+    }
+    
 }

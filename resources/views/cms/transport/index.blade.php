@@ -24,6 +24,7 @@
                     </div>
 
                     <div class="card-body">
+                          @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
@@ -32,57 +33,31 @@
                                     <th>Name</th>
                                     <th>Price</th>
                                     <th>Active</th>
+                                  
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($transports as $transport)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>New York</td>
-                                    <td>$5</td>
+                                    <th scope="row">{{$transport->id}}</th>
+                                    <td>{{$transport->province->name}}</td>
+                                    <td>{{$transport->price}}</td>
                                     <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        <x-button classType="success">
+                                            <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                            {{route('cms.transport.edit', $transport->id)}}
+                                        </x-button>
+                                        <x-delete-form>
+                                            {{route('cms.transport.destroy', $transport->id)}}
+                                        </x-delete-form>
                                     </td>
+                                 
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>California</td>
-                                    <td>$5</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Seattle</td>
-                                    <td>$5</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Chicago</td>
-                                    <td>$5</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Washington DC</td>
-                                    <td>$6</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $transports->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>

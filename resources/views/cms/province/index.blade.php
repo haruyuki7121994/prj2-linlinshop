@@ -13,8 +13,10 @@
 
                 <div class="card">
                     <div>
-                        <div class="col-lg-4" style="margin-top: 20px"><a href="{{route('cms.province.create')}}"><button class="btn btn-primary">Create</button></a></div>
-
+                        <div>
+                            <div class="col-lg-4" style="margin-top: 20px"><a href="{{route('cms.province.create')}}"><button class="btn btn-primary">Create</button></a></div>
+    
+                        </div>
                     </div>
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
@@ -24,59 +26,45 @@
                     </div>
 
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Status</th>
                                     <th>Active</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($provinces as $province)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>New York</td>
+                                    <th scope="row">{{$province->id}}</th>
+                                    <td>{{$province->name}}</td>
+                                    <td>{{$province->type}}</td>
                                     <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        @if($province->is_active == \App\Province::ACTIVE)
+                                            <a class="badge badge-success" href="#">Active</a>
+                                        @else
+                                            <a class="badge badge-danger" href="#">Inactive</a>
+                                        @endif
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>California</td>
                                     <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Seattle</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Chicago</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Washington DC</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        <x-button classType="success">
+                                            <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                            {{route('cms.province.edit', $province->id)}}
+                                        </x-button>
+                                        <x-delete-form>
+                                            {{route('cms.province.destroy', $province->id)}}
+                                        </x-delete-form>
                                     </td>
                                 </tr>
                                 </tbody>
+                                @endforeach
                             </table>
                         </div><!-- bd -->
+                        {{ $provinces->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>

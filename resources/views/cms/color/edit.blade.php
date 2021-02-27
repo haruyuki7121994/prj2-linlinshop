@@ -10,7 +10,7 @@
             <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                 <div class="card  box-shadow-0">
                     <div class="card-header">
-                        <h4 class="card-title mb-1">Create New Color</h4>
+                        <h4 class="card-title mb-1">Edit Color</h4>
                     </div>
                     <div class="card-body pt-0">
                         

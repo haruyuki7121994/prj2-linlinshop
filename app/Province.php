@@ -15,4 +15,11 @@ class Province extends Model
     protected $fillable = [
         'slug', 'name', 'is_active', 'type'
     ];
+   
+    public function productAttrs()
+    {
+        return $this->hasMany(Order::class, 'province_id');
+    }
+    
+  
 }
