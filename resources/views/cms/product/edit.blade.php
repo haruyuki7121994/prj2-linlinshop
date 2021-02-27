@@ -62,7 +62,7 @@
                                         <tbody id="variant-table">
                                         @foreach($variants as $variant)
                                             <tr data-id="{{$variant->id}}">
-                                                <th><img width="200" style="object-fit: contain" src="{{$variant->images->url ?? ''}}" alt=""></th>
+                                                <th><img width="200" style="object-fit: contain" src="{{$variant->images ? env('APP_URL') . $variant->images->url : ''}}" alt=""></th>
                                                 <td>{{$variant->size->name}}</td>
                                                 <td>{{$variant->color->name}}</td>
                                                 <td>{{$variant->qty}}</td>

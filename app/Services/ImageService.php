@@ -19,7 +19,7 @@ class ImageService
                 $filename
             );
 
-            return env('APP_URL') . "{$dir}/" . $filename ;
+            return "{$dir}/" . $filename ;
         } catch (\Exception $e) {
             return $e->getMessage();
         }
