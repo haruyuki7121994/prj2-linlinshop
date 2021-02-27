@@ -24,6 +24,7 @@
                     </div>
 
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="table-responsive">
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
@@ -38,48 +39,36 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Happy New Year</td>
-                                    <td>2021/01/01</td>
-                                    <td>2021/01/30</td>
-                                    <td>20</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                        <a href="promotion_product.html"><button class="btn btn-primary" style="width: 50px"><i class="fa fa-plus"></i></button></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Merry Christmas</td>
-                                    <td>2021/12/01</td>
-                                    <td>2021/12/31</td>
-                                    <td>10</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                        <button class="btn btn-primary" style="width: 50px"><i class="fa fa-plus"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Sale Fall</td>
-                                    <td>2021/11/01</td>
-                                    <td>2021/11/30</td>
-                                    <td>10</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                        <button class="btn btn-primary" style="width: 50px"><i class="fa fa-plus"></i></button>
-                                    </td>
-                                </tr>
+                                    @foreach($promotions as $promotion)
+                                    <tr>
+                                        <th scope="row">{{$promotion->id}}</th>
+                                        <td>{{$promotion->name}}</td>
+                                        <td>{{$promotion->from_date}}</td>
+                                        <td>{{$promotion->end_date}}</td>
+                                        <td>0</td>
+                                        <td>
+                                            @if($promotion->is_active == \App\Promotion::ACTIVE)
+                                            <a class="badge badge-success" href="#">Active</a>
+                                        @else
+                                            <a class="badge badge-danger" href="#">Inactive</a>
+                                        @endif
+                                        </td>
+                                        <td>
+                                            <x-button classType="success">
+                                                <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                                {{route('cms.promotion.edit', $promotion->id)}}
+                                            </x-button>
+                                            <x-delete-form>
+                                                {{route('cms.promotion.destroy', $promotion->id)}}
+                                            </x-delete-form>
+                                            <a href="promotion_product.html"><button class="btn btn-primary" style="width: 50px"><i class="fa fa-plus"></i></button></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $promotions->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>
