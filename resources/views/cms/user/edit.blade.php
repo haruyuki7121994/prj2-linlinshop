@@ -123,11 +123,14 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
+                            </div>
                         </form>
+
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
-                    </div>
+
                 </div>
             </div>
             <!-- /Col -->

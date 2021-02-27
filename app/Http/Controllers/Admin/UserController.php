@@ -16,7 +16,7 @@ class UserController extends Controller
 
     public function edit(User $user, Request $request)
     {
-        return view('cms.user.edit');
+        return view('cms.user.edit', compact('user'));
     }
 
     public function update(User $user, Request $request)
