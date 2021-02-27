@@ -19,7 +19,7 @@
                             <div class="form-group">
                                 <select name="province_id" id="" class="form-control">
                                     <option value="">Select Province</option>
-                                    @foreach($provinces as $province)
+                                    @foreach($provinces ?? '' as $province)
                                         <option value="{{$province->id}}">{{$province->name}}</option>
                                     @endforeach
                                 </select>
@@ -29,13 +29,7 @@
                                 <input type="number" name="price" value="{{old('price')}}" class="form-control" id="inputName" placeholder="Price">
 
                             </div>
-                            <div class="form-group mb-0 justify-content-end">
-                                <label for="inputName">Status: </label>
-                                <input type="hidden" name="is_active" id="btn-active" value="0">
-                                <div class="main-toggle main-toggle-secondary">
-                                    <span></span>
-                                </div>
-                            </div>
+                           
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>
                                     <button type="submit" class="btn btn-primary">Create</button>

@@ -10,7 +10,7 @@ class CreateRequest extends FormRequest
     {
         return [
             'province_id' => 'required|exists:provinces,id',
-            'is_active' => 'required|in:0,1',
+          
             'price' => 'required|numeric|min:1',
         ];
     }
