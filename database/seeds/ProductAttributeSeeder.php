@@ -199,10 +199,11 @@ class ProductAttributeSeeder extends Seeder
             ['product_id' => 20, 'color_id' => 3, 'size_id' => 10, 'qty' => 10, 'price' => 180],
             ['product_id' => 20, 'color_id' => 3, 'size_id' => 11, 'qty' => 10, 'price' => 180],
 
-            ['product_id' => 22, 'color_id' => 8, 'size_id' => 12, 'qty' => 10, 'price' => 430],
-            ['product_id' => 22, 'color_id' => 11, 'size_id' => 12, 'qty' => 10, 'price' => 430],
+            ['product_id' => 22, 'color_id' => 3, 'size_id' => 12, 'qty' => 10, 'price' => 430],
+            ['product_id' => 22, 'color_id' => 4, 'size_id' => 12, 'qty' => 10, 'price' => 430],
 
-            ['product_id' => 23, 'color_id' => 4, 'size_id' => 12, 'qty' => 10, 'price' => 270],
+            ['product_id' => 23, 'color_id' => 8, 'size_id' => 12, 'qty' => 10, 'price' => 270],
+            ['product_id' => 23, 'color_id' => 11, 'size_id' => 12, 'qty' => 10, 'price' => 270],
 
             ['product_id' => 21, 'color_id' => 8, 'size_id' => 12, 'qty' => 10, 'price' => 430],
             ['product_id' => 21, 'color_id' => 11, 'size_id' => 12, 'qty' => 10, 'price' => 430],
@@ -216,8 +217,8 @@ class ProductAttributeSeeder extends Seeder
             ['product_id' => 25, 'color_id' => 4, 'size_id' => 12, 'qty' => 10, 'price' => 310],
             ['product_id' => 25, 'color_id' => 10, 'size_id' => 12, 'qty' => 10, 'price' => 310],
 
-            ['product_id' => 26, 'color_id' => 4, 'size_id' => 12, 'qty' => 10, 'price' => 310],
             ['product_id' => 26, 'color_id' => 11, 'size_id' => 12, 'qty' => 10, 'price' => 310],
+            ['product_id' => 26, 'color_id' => 10, 'size_id' => 12, 'qty' => 10, 'price' => 310],
 
             ['product_id' => 27, 'color_id' => 3, 'size_id' => 12, 'qty' => 10, 'price' => 310],
 

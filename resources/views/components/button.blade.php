@@ -1,1 +1,1 @@
-<a href="{{$slot}}"><button class="btn btn-{{$classType}}">{{$action}}</button></a>
+<a href="{{$slot}}"><span class="btn btn-{{$classType}}">{{$action}}</span></a>

@@ -20,9 +20,9 @@ class ProductAttribute2Seeder extends Seeder
             ['product_id' => 37, 'color_id' => 2, 'size_id' => 3, 'qty' => 10, 'price' => 130],
             ['product_id' => 37, 'color_id' => 2, 'size_id' => 4, 'qty' => 10, 'price' => 130],
 
-            ['product_id' => 38, 'color_id' => 2, 'size_id' => 2, 'qty' => 10, 'price' => 120],
-            ['product_id' => 38, 'color_id' => 2, 'size_id' => 3, 'qty' => 10, 'price' => 120],
-            ['product_id' => 38, 'color_id' => 2, 'size_id' => 4, 'qty' => 10, 'price' => 120],
+            ['product_id' => 38, 'color_id' => 1, 'size_id' => 2, 'qty' => 10, 'price' => 120],
+            ['product_id' => 38, 'color_id' => 1, 'size_id' => 3, 'qty' => 10, 'price' => 120],
+            ['product_id' => 38, 'color_id' => 1, 'size_id' => 4, 'qty' => 10, 'price' => 120],
 
             ['product_id' => 39, 'color_id' => 2, 'size_id' => 2, 'qty' => 10, 'price' => 130],
             ['product_id' => 39, 'color_id' => 2, 'size_id' => 3, 'qty' => 10, 'price' => 130],
@@ -48,9 +48,9 @@ class ProductAttribute2Seeder extends Seeder
             ['product_id' => 44, 'color_id' => 3, 'size_id' => 3, 'qty' => 10, 'price' => 200],
             ['product_id' => 44, 'color_id' => 3, 'size_id' => 4, 'qty' => 10, 'price' => 200],
 
-            ['product_id' => 45, 'color_id' => 13, 'size_id' => 2, 'qty' => 10, 'price' => 100],
-            ['product_id' => 45, 'color_id' => 13, 'size_id' => 3, 'qty' => 10, 'price' => 100],
-            ['product_id' => 45, 'color_id' => 13, 'size_id' => 4, 'qty' => 10, 'price' => 100],
+            ['product_id' => 45, 'color_id' => 3, 'size_id' => 2, 'qty' => 10, 'price' => 100],
+            ['product_id' => 45, 'color_id' => 3, 'size_id' => 3, 'qty' => 10, 'price' => 100],
+            ['product_id' => 45, 'color_id' => 3, 'size_id' => 4, 'qty' => 10, 'price' => 100],
 
             ['product_id' => 46, 'color_id' => 2, 'size_id' => 2, 'qty' => 10, 'price' => 250],
             ['product_id' => 46, 'color_id' => 2, 'size_id' => 3, 'qty' => 10, 'price' => 250],
@@ -67,10 +67,6 @@ class ProductAttribute2Seeder extends Seeder
             ['product_id' => 49, 'color_id' => 1, 'size_id' => 2, 'qty' => 10, 'price' => 120],
             ['product_id' => 49, 'color_id' => 1, 'size_id' => 3, 'qty' => 10, 'price' => 120],
             ['product_id' => 49, 'color_id' => 1, 'size_id' => 4, 'qty' => 10, 'price' => 120],
-
-            ['product_id' => 50, 'color_id' => 3, 'size_id' => 2, 'qty' => 10, 'price' => 200],
-            ['product_id' => 50, 'color_id' => 3, 'size_id' => 3, 'qty' => 10, 'price' => 200],
-            ['product_id' => 50, 'color_id' => 3, 'size_id' => 4, 'qty' => 10, 'price' => 200],
 
             ['product_id' => 50, 'color_id' => 2, 'size_id' => 2, 'qty' => 10, 'price' => 470],
             ['product_id' => 50, 'color_id' => 2, 'size_id' => 3, 'qty' => 10, 'price' => 470],

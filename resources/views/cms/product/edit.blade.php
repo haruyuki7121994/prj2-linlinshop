@@ -3,7 +3,7 @@
     <!-- container -->
     <div class="container-fluid">
 
-        <x-breadcrumb category="Product" action="Create" />
+        <x-breadcrumb category="Product" action="Edit" />
 
         <!-- row -->
         <div class="row row-sm">
@@ -68,8 +68,11 @@
                                                 <td>{{$variant->qty}}</td>
                                                 <td>{{$variant->price}}$</td>
                                                 <td>
-                                                    <span class="btn btn-primary"><i class="fa fa-eye"></i></span>
-                                                    <span class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></span>
+                                                    <x-button classType="primary">
+                                                        <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                                        {{route('cms.product.attr.show', $variant->id)}}
+                                                    </x-button>
+                                                    <span class="btn btn-danger btn-destroy" data-id="{{$variant->id}}"><i class="fa fa-trash"></i></span>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -80,7 +83,7 @@
                             <input type="hidden" name="variants" id="variants">
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                     <button type="submit" class="btn btn-secondary">Back</button>
                                 </div>
                             </div>
@@ -157,6 +160,13 @@
                         contentType: false,
                         processData: false
                     });
+                })
+
+                $('.btn-destroy').click(function () {
+                    if (confirm('Do you want delete attributes ?')) {
+                        let id = $(this).data('id')
+                        window.location.href = '/cms/product/attributes/' + id + '/delete'
+                    }
                 })
 
                 $( document ).ajaxComplete(function( event, request, settings ) {
