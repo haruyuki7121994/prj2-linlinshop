@@ -101,5 +101,5 @@
         <!-- row -->
     </div>
     <!-- Container closed -->
-    <x-add-promotion-product :products="$products" :promotion="$promotion"></x-add-promotion-product>
+    <x-add-promotion-product :products="$notPromotionProducts" :promotion="$promotion"></x-add-promotion-product>
 @endsection
