@@ -4,17 +4,14 @@ namespace App\Http\Requests\Cms\Promotion;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     public function rules()
     {
         return [
-            'name' => 'required',
-            'from_date' => 'required|date_format:Y-m-d',
-            'end_date' => 'required|date_format:Y-m-d',
             'is_active' => 'required|in:0,1',
-            'note' => 'required',
-            'percentage' => 'required|numeric|min:0'
+            'name' => 'required',
+            
         ];
     }
 
@@ -22,4 +19,6 @@ class CreateRequest extends FormRequest
     {
         return true;
     }
+
+    
 }
