@@ -37,6 +37,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
 
     //cart
     Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
+        Route::get('/', [\App\Http\Controllers\Frontend\CartController::class, 'index'])->name('index');
         Route::post('/add', [\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('add');
     });
 });
@@ -45,7 +46,10 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
 Route::group(['prefix' => 'cms', 'as' => 'cms.', 'middleware' => 'admin'], function () {
     Route::get('/dashboard', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('index');
 
-    Route::get('/profile', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('profile');
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
+        Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
+        Route::post('/update', [\App\Http\Controllers\Admin\AdminController::class, 'update'])->name('update');
+    });
 
     Route::resource('user', 'Admin\UserController')->except(['store', 'create', 'show']);
     Route::resource('banner', 'Admin\BannerController')->except(['show']);
