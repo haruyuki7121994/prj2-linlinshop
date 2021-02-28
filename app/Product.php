@@ -28,4 +28,9 @@ class Product extends Model
     {
         return $query->whereIsFeatured(self::IS_FEATURED);
     }
+
+    public function gallery()
+    {
+        return $this->hasManyThrough(Image::class, ProductAttribute::class, 'product_id', 'product_attr_id');
+    }
 }

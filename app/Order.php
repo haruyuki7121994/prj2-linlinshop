@@ -16,6 +16,8 @@ class Order extends Model
     const COD = 0;
     const TRANSFER = 1;
 
+    const LIST_STATUS = ['Pending', 'Approve', 'Delivery', 'Paid'];
+
     protected $table = 'orders';
     protected $fillable = [
         'code', 'user_id', 'province_id',
@@ -32,5 +34,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function detail()
+    {
+        return $this->hasMany(OrderDetail::class);
     }
 }

@@ -18,5 +18,7 @@ class CheckAdmin
         if (!\Auth::check()) return redirect()->route('auth.login.index');
 
         if (\Auth::user()->isAdmin()) return $next($request);
+
+        return redirect()->route('frontend.home');
     }
 }

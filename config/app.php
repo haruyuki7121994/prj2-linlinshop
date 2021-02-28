@@ -180,6 +180,7 @@ return [
 
         //Cart
         CartServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
     ],
 
     /*

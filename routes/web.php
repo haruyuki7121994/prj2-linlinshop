@@ -28,18 +28,36 @@ Route::bind('product', function ($key) {
 Route::bind('attr', function ($key) {
     return \App\ProductAttribute::with(['product', 'color', 'size', 'images'])->whereId($key)->first() ?? abort(404);
 });
+Route::bind('order', function ($key) {
+    return \App\Order::with(['detail'])->whereCode($key)->first() ?? abort(404);
+});
+Route::bind('code', function ($key) {
+    return \App\User::whereIsActive(\App\User::INACTIVE)->whereRememberToken($key)->first() ?? abort(404);
+});
 
 //frontend
 Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
     Route::get('/home', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
     Route::get('/collection/{collection}', [\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('collection');
+    Route::get('/all', [\App\Http\Controllers\Frontend\ProductController::class, 'all'])->name('all');
     Route::get('/product/{product}', [\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('product');
+
+    //transport
+    Route::post('/transport', [\App\Http\Controllers\Frontend\TransportController::class, 'get'])->name('transport.get');
 
     //cart
     Route::group(['prefix' => '/cart', 'as' => 'cart.'], function () {
         Route::get('/', [\App\Http\Controllers\Frontend\CartController::class, 'index'])->name('index');
         Route::post('/add', [\App\Http\Controllers\Frontend\CartController::class, 'add'])->name('add');
+        Route::post('/update', [\App\Http\Controllers\Frontend\CartController::class, 'update'])->name('update');
     });
+
+    //order
+    Route::post('/order', [\App\Http\Controllers\Frontend\OrderController::class, 'handle'])->name('order.handle');
+    Route::get('/success/{order}', [\App\Http\Controllers\Frontend\OrderController::class, 'success'])->name('order.success');
+
+    //contact-us
+    Route::get('/contact-us', [\App\Http\Controllers\Frontend\PageController::class, 'contact'])->name('contact');
 });
 
 //admin
@@ -82,5 +100,8 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login.index');
     Route::post('/login/authenticate', [\App\Http\Controllers\Auth\AuthController::class, 'authenticate'])->name('login.authenticate');
     Route::get('/logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
+    Route::get('/register', [\App\Http\Controllers\Auth\AuthController::class, 'register'])->name('register.index');
+    Route::post('/register/verify', [\App\Http\Controllers\Auth\AuthController::class, 'verify'])->name('register.verify');
+    Route::get('/confirm/{code}', [\App\Http\Controllers\Auth\AuthController::class, 'confirm'])->name('register.confirm');
 });
 

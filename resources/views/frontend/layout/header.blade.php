@@ -8,7 +8,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <nav class="nav nav-fill" style="background-color: whitesmoke;">
                 <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black; " class="nav-link" href="../index.html"><i
+                    <a style="font-size: 1.2em; color:black; " class="nav-link" href="{{route('frontend.home')}}"><i
                             class="fas fa-home"></i> HOME<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -16,17 +16,29 @@
                             class="fas fa-store"></i> CATALOGS</a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="../contact.html"><i
+                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('frontend.contact')}}"><i
                             class="fas fa-id-card"></i> CONTACT US</a>
                 </li>
-                <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.login.index')}}"><i
-                            class="fas fa-lock"></i> LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black;" class="nav-link" href="../signup.html"><i
-                            class="fas fa-user-plus"></i> SIGN UP</a>
-                </li>
+                @if(!Auth::check())
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.login.index')}}"><i
+                                class="fas fa-lock"></i> LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.register.index')}}"><i
+                                class="fas fa-user-plus"></i> SIGN UP</a>
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.login.index')}}"><i
+                                class="fas fa-lock"></i> PROFILE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.logout')}}"><i
+                                class="fas fa-user-plus"></i> LOGOUT</a>
+                    </li>
+                @endif
+
                 <li class="nav-item">
                     <a style="font-size: 1.2em; color:black;" class="nav-link" data-toggle="modal"
                        href="#modalSearch"> <i class="fas fa-search"></i> SEARCH</a>

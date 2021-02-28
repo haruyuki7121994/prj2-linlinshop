@@ -13,7 +13,7 @@ class CreateProductAttributeTable extends Migration
             $table->integer('product_id')->index();
             $table->integer('color_id')->index();
             $table->integer('size_id')->index();
-            $table->integer('promotion_id')->index();
+            $table->integer('promotion_id')->index()->nullable();
             $table->integer('qty')->default(1);
             $table->float('price', 20, 6)->default(0);
             //

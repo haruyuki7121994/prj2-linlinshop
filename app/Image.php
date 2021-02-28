@@ -10,4 +10,9 @@ class Image extends Model
     protected $fillable = [
         'product_attr_id', 'url'
     ];
+
+    public function getUrlAttribute($value)
+    {
+        return env('APP_URL') . $value;
+    }
 }

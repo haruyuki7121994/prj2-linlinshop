@@ -49,9 +49,9 @@
     padding: 0.5em;
 }
 
-input {
-    width: 5em;
-}
+/*input {*/
+/*    width: 5em;*/
+/*}*/
 
 
 .a3 {
@@ -265,6 +265,39 @@ h6 {
     background: orangered;
 }
 
+.soluong {
+    border: none;
+}
+
+.img2 {
+    height: 300px;
+    width: 250px;
+    min-width: auto !important;
+    margin: auto !important;
+    display: block;
+
+}
+
+.a12 {
+    color: black;
+    font-size: 1em;
+}
+
+.dropdown-menu {
+    background-color: white !important;
+}
+
+.checkout__sidebar {
+    width: 570px;
+    flex: 0 0 auto;
+    padding: 80px 60px;
+    background: #f8f8f8;
+
+}
+.imggiohang{
+    max-width: 100%;
+    height: auto;
+}
 .soluong {
     border: none;
 }

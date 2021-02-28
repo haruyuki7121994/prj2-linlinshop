@@ -9,13 +9,16 @@
                         <nav>
 
                             <ul class="navbar-nav">
-
-                                <li><a class="a4" href="index.html">HOME</a></li>
+                                <li><a class="a4" href="{{route('frontend.home')}}">HOME</a></li>
                                 <li><a class="a4" href="Pages.html">CATALOG</a></li>
-                                <li><a class="a4" href="contact.html">CONTACT US</a></li>
-                                <li><a class="a4" href="login.html">LOGIN</a></li>
-                                <li><a class="a4" href="signup.html">SIGN UP</a></li>
-
+                                <li><a class="a4" href="{{route('frontend.contact')}}">CONTACT US</a></li>
+                                @if(!Auth::check())
+                                <li><a class="a4" href="{{route('auth.login.index')}}">LOGIN</a></li>
+                                <li><a class="a4" href="{{route('auth.register.index')}}">SIGN UP</a></li>
+                                @else
+                                <li><a class="a4" href="{{route('auth.login.index')}}">PROFILE</a></li>
+                                <li><a class="a4" href="{{route('auth.logout')}}">LOGOUT</a></li>
+                                @endif
                             </ul>
 
                         </nav>
@@ -27,7 +30,7 @@
                             INFORMATION
                         </p>
                         <p style="color: white; font-size: 0.7em;">
-                            PHONE NUMBER:0927110910
+                            PHONE NUMBER: 0927110910
 
                         </p>
                         <p style="font-size: 0.7em; color:white;">

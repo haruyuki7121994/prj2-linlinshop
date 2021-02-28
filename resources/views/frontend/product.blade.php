@@ -19,22 +19,10 @@
                 <div class="col-md-6">
                     <div class="borderhinhanh">
                         <div class="row">
-                            <div class="col-md-3" id="image-group">
-                                <div class="row">
-                                    <img src="vaytrang/vaytrang2.jpg" class="smallimg" alt="" id="image_1">
-                                </div>
-                                <div class="row">
-                                    <img src="vaytrang/vaytrang2,1.jpg" class="smallimg" alt="" id="image_2">
-                                </div>
-                                <div class="row">
-                                    <img src="vaytrang/vaytrang2,2.jpg" class="smallimg" alt="" id="image_2">
-                                </div>
-
-                            </div>
-                            <div class="col-md-3">
-                                <img id="main-image" src="vaytrang/vaytrang2.jpg"
-                                     style="padding-left: 0.2em; padding-top: 0.2em; padding-bottom: 0.2em;"
-                                     width="365" height="460" alt="" />
+                            <div class="col-md-12">
+                                <img id="main-image" src="{{$productAttrs->first()->images ? $productAttrs->first()->images->url : ''}}"
+                                     style="padding-left: 0.2em; padding-top: 0.2em; padding-bottom: 0.2em; width: 100%"
+                                     alt="" />
                             </div>
 
                         </div>
@@ -279,6 +267,7 @@
 @endsection
 @push('custom-js')
     <script>
+        let listProduct = {!! $productAttrs !!}
         let selected = {
             'product-id': '{{$product->id}}'
         }
@@ -300,6 +289,8 @@
                 })
                 $(this).css('border', '2px solid black')
                 selected[name] = $(this).data(name)
+                let productSelect = listProduct.find(itm => itm.product_id === parseInt(selected['product-id']) && itm.color_id === selected['color-id'] && itm.size_id === selected['size-id'])
+                if (productSelect !== undefined) $('#main-image').attr('src', productSelect.images.url)
             })
         }
 

@@ -9,8 +9,7 @@
     <ul class="navbar" style="margin:auto;">
         <div id="my-na" class="collapse navbar-collapse">
             <li class="nav-item active dropdown">
-                <a class="nav-link" style=" font-size: 0.7em; color: white; font-weight: bolder;"
-                   href="Pages.html">
+                <a class="nav-link" style=" font-size: 0.7em; color: white; font-weight: bolder;" href="{{route('frontend.all')}}">
                     ALL PRODUCTS</a>
             </li>
             @foreach(\App\Category::$staticList as $key => $groupCate)
@@ -20,7 +19,7 @@
                        aria-haspopup="true" aria-expanded="false">WOMEN'S {{strtoupper($key)}}</a>
 
                     <div class="dropdown-menu">
-                        <a style="font-size: 0.7em;" class="dropdown-item" href="quan ao/quanaonu.html">All Women's {{$key}}</a>
+                        <a style="font-size: 0.7em;" class="dropdown-item" href="{{route('frontend.all', ['category' => $key])}}">All Women's {{$key}}</a>
                         @foreach($groupCate as $slug => $cate)
                             <a style="font-size: 0.7em;" class="dropdown-item" href="{{route('frontend.collection', $slug)}}">{{$cate['name']}}</a>
                         @endforeach
@@ -31,8 +30,8 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
         <div style="padding: 0.5em; border-radius: 0.5em;">
-            <a id="my-cart" style="font-size: 1.5em; margin: auto; font-weight: bolder; color: white" href="cart.html">
-                <i style="color: white;" class="fa fa-shopping-bag"></i> (0)
+            <a id="my-cart" style="font-size: 1.5em; margin: auto; font-weight: bolder; color: white" href="{{route('frontend.cart.index')}}">
+                <i style="color: white;" class="fa fa-shopping-bag"></i>({{$totalCart}})
             </a>
         </div>
 

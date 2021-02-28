@@ -19,5 +19,5 @@ class Transport extends Model
     {
         return $this->hasMany(order::class, 'province_id');
     }
-    
+
 }

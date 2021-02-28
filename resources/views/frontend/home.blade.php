@@ -29,11 +29,13 @@
                     <div class="carousel-inner" role="listbox">
                         @foreach($featuredProducts as $featured)
                             <div class="carousel-item {{$loop->first ? 'active': ''}}">
-                                <a href="quan ao/Setoftshirtsandjeansskirts.html"><img class="imgcaro"
-                                                                                       src="/asset/images/frontend/redfress/vaydo1.jpg" alt=""></a>
+                                <a href="{{route('frontend.product', $featured->product->slug)}}">
+                                    <img class="imgcaro" style="height: 700px"
+                                         src="{{$featured->images ? $featured->images->url : ''}}" alt="">
+                                </a>
                                 <div class="carousel-caption d-none d-md-block"
                                      style="width: 30%; background-color: black; opacity: 0.8; margin: auto;">
-                                    <a href="quan ao/Setoftshirtsandjeansskirts.html"
+                                    <a href="{{route('frontend.product', $featured->product->slug)}}"
                                        style="font-weight: bolder; font-size: 1em; color: white; text-decoration: none;">
                                         {{$featured->product->name}}</a>
                                     <h5>Price: {{$featured->price}}$</h5>
@@ -466,7 +468,7 @@
         <br><br>
         <div class="hinhchay">
             <div class="col-md-12">
-                <x-breadcrumb category="WOMEN'S CLOTHING" action="#" view="homepage"/>
+                <x-breadcrumb category="WOMEN'S CLOTHING" action="{{route('frontend.all', ['category' => 'clothes'])}}" view="homepage"/>
                 <div class="row">
                     <x-representative-products class="col-md-2" :itms="$clothes"/>
                 </div>
@@ -478,13 +480,13 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6">
-                        <x-breadcrumb category="WOMEN'S HANDBAGS" action="#" view="homepage"/>
+                        <x-breadcrumb category="WOMEN'S HANDBAGS" action="{{route('frontend.all', ['category' => 'handbags'])}}" view="homepage"/>
                         <div class="row">
                             <x-representative-products class="col-md-4" :itms="$handbags"/>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <x-breadcrumb category="WOMEN'S SHOES" action="#" view="homepage"/>
+                        <x-breadcrumb category="WOMEN'S SHOES" action="{{route('frontend.all', ['category' => 'shoes'])}}" view="homepage"/>
                         <div class="row">
                             <x-representative-products class="col-md-4" :itms="$shoes"/>
                         </div>
@@ -497,7 +499,7 @@
         <br>
         <div class="hinhchay">
             <div class="col-md-12">
-                <x-breadcrumb category="ACCESSORIES FOR WOMEN" action="#" view="homepage"/>
+                <x-breadcrumb category="ACCESSORIES FOR WOMEN" action="{{route('frontend.all', ['category' => 'accessories'])}}" view="homepage"/>
                 <div class="row">
                     <x-representative-products class="col-md-2" :itms="$accessories"/>
                 </div>
@@ -506,4 +508,12 @@
         <br>
     </div>
 </section>
+    @push('custom-js')
+        <script>
+            $(document).ready(function() {
+                let total_cart = {{$totalCart}};
+                console.log(total_cart)
+            });
+        </script>
+    @endpush
 @endsection
