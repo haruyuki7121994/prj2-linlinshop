@@ -11,23 +11,18 @@
             <div class="col-lg-4">
                 <div class="card mg-b-20">
                     <div class="card-body">
-                        @include('cms.layout.message')
-                        
                         <div class="main-content-label tx-13 mg-b-25">
                             Contact
                         </div>
-                      
                         <div class="main-profile-contact-list">
-                          
                             <div class="media">
                                 <div class="media-icon bg-primary-transparent text-primary">
                                     <i class="icon ion-md-phone-portrait"></i>
                                 </div>
-                               
                                 <div class="media-body">
                                     <span>Mobile</span>
                                     <div>
-                                        {{$user->mobile}}
+                                        +245 354 654
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +33,7 @@
                                 <div class="media-body">
                                     <span>Email</span>
                                     <div>
-                                        {{$user->email}}
+                                        david_beckham@spruko.w
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +44,7 @@
                                 <div class="media-body">
                                     <span>Current Address</span>
                                     <div>
-                                        {{$user->address}}
+                                        San Francisco, CA
                                     </div>
                                 </div>
                             </div>
@@ -64,9 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-                         
                         </div><!-- main-profile-contact-list -->
-                       
                     </div>
                 </div>
             </div>
@@ -76,17 +69,14 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Personal Information</div>
-                        @include('cms.layout.message')
-                        <form class="form-horizontal"method="post" action="{{route('cms.user.update',$user->id)}}"> 
-                            @method('PUT')
-                            @csrf
+                        <form class="form-horizontal">
                             <div class="form-group ">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="form-label">User Name</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" name="name" class="form-control" value="{{old('name',$user->name)}}"  placeholder="User Name" id="inputName">
+                                        <input type="text" class="form-control"  placeholder="User Name" value="Petey Cruiser">
                                     </div>
                                 </div>
                                 <div class="mb-4 main-content-label">Contact Info</div>
@@ -96,7 +86,7 @@
                                             <label class="form-label">Email<i>(required)</i></label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" name="email" id="email"  value="{{old('email',$user->email)}}" class="form-control"  placeholder="Email" >
+                                            <input type="text" class="form-control"  placeholder="Email" value="info@Valex.in">
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +96,7 @@
                                             <label class="form-label">Phone</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" name="mobile" id="phone" value="{{old('mobile',$user->mobile)}}" class="form-control"  placeholder="phone number">
+                                            <input type="text" class="form-control"  placeholder="phone number" value="+245 354 654">
                                         </div>
                                     </div>
                                 </div>
@@ -116,24 +106,9 @@
                                             <label class="form-label">Address</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" name="address" rows="2"  placeholder="Address">{{old('address',$user->address)}}</textarea>
+                                            <textarea class="form-control" name="example-textarea-input" rows="2"  placeholder="Address">San Francisco, CA</textarea>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label for="inputName">Status: </label>
-                                        </div>
-                                        <div class="c0l-md-9">
-                                            <input type="hidden" name="is_active" id="btn-active" value="{{old('is_active', $user->is_active)}}">
-                                    <div class="main-toggle main-toggle-secondary {{$user->is_active == \App\User::ACTIVE ? 'on' : ''}}">
-                                        <span></span>
-                                    </div>
-                                        </div>
-                                    </div>
-                                  
-                                    
                                 </div>
                                 <div class="mb-4 main-content-label">Email Preferences</div>
                                 <div class="form-group mb-0">
@@ -143,7 +118,7 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="custom-controls-stacked">
-                                                <label class="ckbox mg-b-10"><input type="checkbox"><span> Accept and Send email</span></label>
+                                                <label class="ckbox mg-b-10"><input checked="" type="checkbox"><span> Accept and Send email</span></label>
                                             </div>
                                         </div>
                                     </div>
@@ -252,15 +227,3 @@
     </div>
     <!-- Container closed -->
 @endsection
-@push('custom-js')
-    <!-- Internal form-elements js -->
-    <script src="{{asset('cms/assets/js/form-elements.js')}}"></script>
-    <script>
-        $( document ).ready(function() {
-            $('.main-toggle').click(function() {
-                let className = this.className
-                className.includes(' on') ? $('#btn-active').val(1) : $('#btn-active').val(0)
-            });
-        });
-    </script>
-@endpush

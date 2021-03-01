@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Requests\Cms\Profile\UpdateRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class AdminController extends Controller
 {
@@ -13,9 +14,13 @@ class AdminController extends Controller
         return view('cms.profile.index', compact('admin'));
     }
 
-    public function update(Request $request)
+    public function update(UpdateRequest $request)
     {
         $admin = \Auth::user();
-        dd($request->all());
+        return $admin->update($request->validated())
+        ? redirect()->route('cms.profile.index')->withSuccess('Update admin is successful')
+        : redirect()->route('cms.profile.index')->withErrors('Cannot create admin');
     }
+
+   
 }
