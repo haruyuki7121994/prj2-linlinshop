@@ -11,6 +11,7 @@
             <div class="col-lg-4">
                 <div class="card mg-b-20">
                     <div class="card-body">
+                        @include('cms.layout.message')
                         <div class="main-content-label tx-13 mg-b-25">
                             Contact
                         </div>
@@ -22,7 +23,9 @@
                                 <div class="media-body">
                                     <span>Mobile</span>
                                     <div>
-                                        +245 354 654
+                                       
+                                        {{$admin->mobile}}
+                              
                                     </div>
                                 </div>
                             </div>
@@ -33,7 +36,7 @@
                                 <div class="media-body">
                                     <span>Email</span>
                                     <div>
-                                        david_beckham@spruko.w
+                                        {{$admin->email}}
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +47,7 @@
                                 <div class="media-body">
                                     <span>Current Address</span>
                                     <div>
-                                        San Francisco, CA
+                                        {{$admin->address}}
                                     </div>
                                 </div>
                             </div>
@@ -58,14 +61,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Personal Information</div>
-                        <form class="form-horizontal">
+                        @include('cms.layout.message')
+                        <form class="form-horizontal "method="post" action="{{route('cms.profile.update')}}">
+                            @csrf
                             <div class="form-group ">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="form-label">User Name</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="User Name" value="Petey Cruiser">
+                                        <input type="text" class="form-control"  placeholder="User Name" value="{{old('name',$admin->name)}}" name="name" >
                                     </div>
                                 </div>
                                 <div class="mb-4 main-content-label">Contact Info</div>
@@ -75,7 +80,7 @@
                                             <label class="form-label">Email<i>(required)</i></label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="Email" value="info@Valex.in">
+                                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{old('email',$admin->email)}}">
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +90,7 @@
                                             <label class="form-label">Phone</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control"  placeholder="phone number" value="+245 354 654">
+                                            <input type="text" class="form-control" name="mobile"  placeholder="phone number" value="{{old('mobile',$admin->mobile)}}">
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +100,7 @@
                                             <label class="form-label">Address</label>
                                         </div>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" name="example-textarea-input" rows="2"  placeholder="Address">San Francisco, CA</textarea>
+                                            <textarea class="form-control" name="address" rows="2"  placeholder="Address">{{old('address',$admin->address)}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -103,6 +108,7 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
                             </div>
+                           
                         </form>
                     </div>
 
@@ -120,14 +126,26 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Update Password</div>
-                        <form class="form-horizontal">
+                     
+                        <form class="form-horizontal" method="post">
+                            <div class="form-group ">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Old Password</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control"  placeholder="Old Password" name="Oldpassword" value="{{$admin->password}}" >
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group ">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="form-label">New Password</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="New Password" value="">
+                                        <input type="text" class="form-control"  placeholder="New Password" name="Newpassword" >
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +155,7 @@
                                         <label class="form-label">Re Password</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="Re Password" value="">
+                                        <input type="text" class="form-control"  placeholder="Re Password" name="Repassword">
                                     </div>
                                 </div>
                             </div>

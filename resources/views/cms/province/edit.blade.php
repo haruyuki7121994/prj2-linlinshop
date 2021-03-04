@@ -3,7 +3,7 @@
     <!-- container -->
     <div class="container-fluid">
 
-        <x-breadcrumb category="Province" action="Create" />
+        <x-breadcrumb category="Province" action="edit" />
 
         <!-- row -->
         <div class="row row-sm">
