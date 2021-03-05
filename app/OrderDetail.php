@@ -19,6 +19,6 @@ class OrderDetail extends Model
 
     public function productAttr()
     {
-        return $this->belongsTo(ProductAttribute::class, 'product_attr_id', 'id');
+        return $this->belongsTo(ProductAttribute::class, 'product_attr_id');
     }
 }

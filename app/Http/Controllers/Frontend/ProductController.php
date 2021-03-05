@@ -29,7 +29,7 @@ class ProductController extends Controller
 
     public function all(Request $request)
     {
-        $category = (object)['name' => ucfirst($request->category)];
+        $category = (object)['name' => $request->category ? ucfirst($request->category) : 'Catalogs'];
         $collect = ProductAttribute::with(['product.category', 'images'])->orderBy('id', 'desc')->get();
 
         $products = $this->filterProdsByCategories($collect, \Arr::flatten(\Arr::get(Category::$staticList, $request->category, [])), null);

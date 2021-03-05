@@ -10,4 +10,19 @@ class PageController extends Controller
     {
         return view('frontend.contact-us');
     }
+
+    public function transport()
+    {
+        return view('frontend.transport');
+    }
+
+    public function term()
+    {
+        return view('frontend.term-of-use');
+    }
+
+    public function warranty()
+    {
+        return view('frontend.warranty-policy');
+    }
 }

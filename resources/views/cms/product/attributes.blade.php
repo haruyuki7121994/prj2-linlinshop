@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="form-group">
-                                <img src="{{$productAttr->images ? env('APP_URL') . $productAttr->images->url : ''}}" alt="">
+                                <img src="{{$productAttr->images ? $productAttr->images->url : ''}}" alt="">
                             </div>
 
                             <div class="form-group">

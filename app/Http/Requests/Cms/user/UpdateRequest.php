@@ -9,8 +9,6 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-          
-            'email' => 'required',
             'name' => 'required',
             'mobile' => 'required',
             'address' => 'required',
@@ -23,5 +21,5 @@ class UpdateRequest extends FormRequest
         return true;
     }
 
-  
+
 }

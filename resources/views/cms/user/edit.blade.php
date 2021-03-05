@@ -12,18 +12,18 @@
                 <div class="card mg-b-20">
                     <div class="card-body">
                         @include('cms.layout.message')
-                        
+
                         <div class="main-content-label tx-13 mg-b-25">
                             Contact
                         </div>
-                      
+
                         <div class="main-profile-contact-list">
-                          
+
                             <div class="media">
                                 <div class="media-icon bg-primary-transparent text-primary">
                                     <i class="icon ion-md-phone-portrait"></i>
                                 </div>
-                               
+
                                 <div class="media-body">
                                     <span>Mobile</span>
                                     <div>
@@ -60,13 +60,13 @@
                                 <div class="media-body">
                                     <span>Total Order</span>
                                     <div>
-                                        5
+                                        {{count($user->orders)}}
                                     </div>
                                 </div>
                             </div>
-                         
+
                         </div><!-- main-profile-contact-list -->
-                       
+
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Personal Information</div>
                         @include('cms.layout.message')
-                        <form class="form-horizontal"method="post" action="{{route('cms.user.update',$user->id)}}"> 
+                        <form class="form-horizontal"method="post" action="{{route('cms.user.update',$user->id)}}">
                             @method('PUT')
                             @csrf
                             <div class="form-group ">
@@ -90,16 +90,6 @@
                                     </div>
                                 </div>
                                 <div class="mb-4 main-content-label">Contact Info</div>
-                                <div class="form-group ">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label class="form-label">Email<i>(required)</i></label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" name="email" id="email"  value="{{old('email',$user->email)}}" class="form-control"  placeholder="Email" >
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-group ">
                                     <div class="row">
                                         <div class="col-md-3">
@@ -132,8 +122,8 @@
                                     </div>
                                         </div>
                                     </div>
-                                  
-                                    
+
+
                                 </div>
                                 <div class="mb-4 main-content-label">Email Preferences</div>
                                 <div class="form-group mb-0">
@@ -186,61 +176,21 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($user->orders as $order)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>#000001</td>
-                                <td>Petey Cruiser</td>
-                                <td>20$</td>
-                                <td>Paid</td>
+                                <th scope="row">{{$order->id}}</th>
+                                <td>#{{$order->code}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$order->total}}$</td>
+                                <td>{{\App\Order::LIST_STATUS[$order->status]}}</td>
                                 <td>
-                                    <a href="invoice.html"><button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button></a>
-                                    <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                    <x-button classType="success">
+                                        <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                        {{route('cms.order.edit', $order->id)}}
+                                    </x-button>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>#000002</td>
-                                <td>Petey Cruiser</td>
-                                <td>40$</td>
-                                <td>Pending</td>
-                                <td>
-                                    <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                    <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>#000003</td>
-                                <td>Petey Cruiser</td>
-                                <td>50$</td>
-                                <td>Pre-Pending</td>
-                                <td>
-                                    <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                    <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>#000004</td>
-                                <td>Petey Cruiser</td>
-                                <td>60$</td>
-                                <td>Delivery</td>
-                                <td>
-                                    <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                    <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>#000005</td>
-                                <td>Petey Cruiser</td>
-                                <td>20$</td>
-                                <td>Paid</td>
-                                <td>
-                                    <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                    <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div><!-- bd -->

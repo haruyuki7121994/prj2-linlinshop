@@ -37,7 +37,7 @@
                                     <th scope="row">{{$user->id}}</th>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->name}}</td>
-                                    <td>0</td>
+                                    <td>{{$user->orders_count}}</td>
                                     <td>
                                         @if($user->is_active == \App\User::ACTIVE)
                                             <a class="badge badge-success" href="#">Active</a>

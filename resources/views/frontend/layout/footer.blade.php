@@ -10,13 +10,13 @@
 
                             <ul class="navbar-nav">
                                 <li><a class="a4" href="{{route('frontend.home')}}">HOME</a></li>
-                                <li><a class="a4" href="Pages.html">CATALOG</a></li>
+                                <li><a class="a4" href="{{route('frontend.all')}}">CATALOGS</a></li>
                                 <li><a class="a4" href="{{route('frontend.contact')}}">CONTACT US</a></li>
                                 @if(!Auth::check())
                                 <li><a class="a4" href="{{route('auth.login.index')}}">LOGIN</a></li>
                                 <li><a class="a4" href="{{route('auth.register.index')}}">SIGN UP</a></li>
                                 @else
-                                <li><a class="a4" href="{{route('auth.login.index')}}">PROFILE</a></li>
+                                <li><a class="a4" href="{{route('auth.profile.index')}}">PROFILE</a></li>
                                 <li><a class="a4" href="{{route('auth.logout')}}">LOGOUT</a></li>
                                 @endif
                             </ul>
@@ -45,10 +45,10 @@
                         <nav>
                             <p style="color: white; font-size: 1.2em;">FAQ</p>
                             <ul class="navbar-nav">
-                                <li><a class="a4" href="">TRANSPORT</a></li>
-                                <li><a class="a4" href="">WARRANTY POLICY
+                                <li><a class="a4" href="{{route('frontend.transport')}}">TRANSPORT</a></li>
+                                <li><a class="a4" href="{{route('frontend.warranty')}}">WARRANTY POLICY
                                     </a></li>
-                                <li><a class="a4" href="">RETURN POLICY</a></li>
+                                <li><a class="a4" href="{{route('frontend.term')}}">TERM OF USE</a></li>
                             </ul>
                         </nav>
                     </div>

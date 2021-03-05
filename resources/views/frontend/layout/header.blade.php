@@ -12,7 +12,7 @@
                             class="fas fa-home"></i> HOME<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a style="font-size: 1.2em; color:black; " class="nav-link" href="Pages.html"><i
+                    <a style="font-size: 1.2em; color:black; " class="nav-link" href="{{route('frontend.all')}}"><i
                             class="fas fa-store"></i> CATALOGS</a>
                 </li>
                 <li class="nav-item">
@@ -30,7 +30,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.login.index')}}"><i
+                        <a style="font-size: 1.2em; color:black;" class="nav-link" href="{{route('auth.profile.index')}}"><i
                                 class="fas fa-lock"></i> PROFILE</a>
                     </li>
                     <li class="nav-item">

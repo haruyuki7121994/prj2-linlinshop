@@ -11,8 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        
-        $users = User::where('is_admin', '<>', User::IS_ADMIN)->orderBy('id', 'desc')->paginate(5);
+        $users = User::withCount(['orders'])->where('is_admin', '<>', User::IS_ADMIN)->orderBy('id', 'desc')->paginate(5);
         return view('cms.user.index', compact('users'));
     }
 

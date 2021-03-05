@@ -58,6 +58,6 @@ class CartController extends Controller
 
         return $res instanceof InvalidItemException
             ? response()->json(['stt' => 'error', 'msg' => $res->getMessage()])
-            : response()->json(['stt' => 'success', 'msg' => $res]);
+            : response()->json(['stt' => 'success', 'msg' => ['cart' => $res, 'total' => $this->cartService->totalQuantity()]]);
     }
 }

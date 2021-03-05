@@ -4,15 +4,13 @@ namespace App\Http\Requests\Cms\Profile;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRequest extends FormRequest
+class RepasswordRequest extends FormRequest
 {
     public function rules()
     {
         return [
-            'name' => 'required',
-            'mobile' => 'required',
-            'address' => 'required',
-            'province_id' => 'required|exists:provinces,id'
+            'new_password' => 'required',
+            're_password' => 'required|same:new_password'
         ];
     }
 
@@ -20,6 +18,4 @@ class UpdateRequest extends FormRequest
     {
         return true;
     }
-
-
 }

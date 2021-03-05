@@ -10,50 +10,77 @@
                 - - - - </marquee>
         </div>
 
-
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div style="display: block; background-color: black; padding: 0.5em;">
                 <h1 style="text-align: center; font-size: 2em; color: white;">FEATURED PRODUCTS</h1>
             </div>
-
+            <br>
             <div class="bordercaro">
                 <div id="carousel" class="carousel slide " data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselId" data-slide-to="1"></li>
-                        <li data-target="#carouselId" data-slide-to="2"></li>
-                        <li data-target="#carouselId" data-slide-to="3"></li>
-                    </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         @foreach($featuredProducts as $featured)
                             <div class="carousel-item {{$loop->first ? 'active': ''}}">
-                                <a href="{{route('frontend.product', $featured->product->slug)}}">
-                                    <img class="imgcaro" style="height: 700px"
-                                         src="{{$featured->images ? $featured->images->url : ''}}" alt="">
-                                </a>
-                                <div class="carousel-caption d-none d-md-block"
-                                     style="width: 30%; background-color: black; opacity: 0.8; margin: auto;">
-                                    <a href="{{route('frontend.product', $featured->product->slug)}}"
-                                       style="font-weight: bolder; font-size: 1em; color: white; text-decoration: none;">
-                                        {{$featured->product->name}}</a>
-                                    <h5>Price: {{$featured->price}}$</h5>
+                                <div class="row">
+                                    <div class="col-5">
+                                        <a style="width: 60px;height: 50px; margin: auto; "
+                                           class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                                            <span style="background-color: black; width: 30px; height: 40px;" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+
+                                        <a href="{{route('frontend.product', $featured->product->slug)}}">
+                                            <img class="imgcaro"
+                                                 src="{{$featured->images ? $featured->images->url : ''}}" alt="">
+                                        </a>
+
+                                        <a style="width: 60px; height: 50px; margin: auto;"
+                                           class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                                            <span style="background-color: black; width: 30px; height: 40px;" class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <div style="  padding: 3em; background-color: whitesmoke;">
+                                            <h1 style="color: black; font-weight: bolder;">{{Str::limit($featured->product->name, 20, '...')}}</h1>
+                                            <div class="product-single__rating">
+                                                <a href="#reviews">
+                                                    <span style="color:orange; font-size: 2em;">5/5 <i class="fas fa-star"></i><i
+                                                            class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                            class="fas fa-star"></i></span>
+                                                </a>
+                                            </div>
+
+                                            <div class="price">
+                                                <p style="font-size: 2em;">Price: ${{$featured->price}}</p>
+                                            </div>
+
+                                            <div style="background-color: whitesmoke;">
+                                                <h3>Product Description</h3>
+                                                <p>
+                                                    {{Str::limit($featured->product->description, 250, '...')}}
+                                                </p>
+                                            </div>
+                                            <br><br>
+                                            <div class="giohang">
+                                                <a href="{{route('frontend.product', $featured->product->slug)}}"><button style="font-size: 1.5em; font-weight: bolder;" class="view">VIEWS PRODUCT</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
-                    <a style="background-color: black; width: 50px; height: 100px; margin: auto;"
-                       class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a style="background-color: black; width: 50px; height: 100px; margin: auto;"
-                       class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+
+                    <br><br>
+                    <ol class="carousel-indicators">
+                        <li style="background-color: black;" data-target="#carouselId" data-slide-to="0" class="active"></li>
+                        <li style="background-color: black;" data-target="#carouselId" data-slide-to="1"></li>
+                        <li style="background-color: black;" data-target="#carouselId" data-slide-to="2"></li>
+                        <li style="background-color: black;" data-target="#carouselId" data-slide-to="3"></li>
+                    </ol>
                 </div>
+
             </div>
         </div>
 

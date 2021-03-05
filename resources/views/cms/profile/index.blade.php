@@ -23,9 +23,9 @@
                                 <div class="media-body">
                                     <span>Mobile</span>
                                     <div>
-                                       
+
                                         {{$admin->mobile}}
-                              
+
                                     </div>
                                 </div>
                             </div>
@@ -77,16 +77,6 @@
                                 <div class="form-group ">
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <label class="form-label">Email<i>(required)</i></label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <input type="text" class="form-control" name="email" placeholder="Email" value="{{old('email',$admin->email)}}">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <div class="row">
-                                        <div class="col-md-3">
                                             <label class="form-label">Phone</label>
                                         </div>
                                         <div class="col-md-9">
@@ -108,7 +98,7 @@
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>
                             </div>
-                           
+
                         </form>
                     </div>
 
@@ -126,26 +116,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Update Password</div>
-                     
-                        <form class="form-horizontal" method="post">
-                            <div class="form-group ">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <label class="form-label">Old Password</label>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="Old Password" name="Oldpassword" value="{{$admin->password}}" >
-                                    </div>
-                                </div>
-                            </div>
-
+                        @include('cms.layout.message')
+                        <form class="form-horizontal" method="post" action="{{route('cms.profile.repassword')}}">
+                            @csrf
                             <div class="form-group ">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label class="form-label">New Password</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="New Password" name="Newpassword" >
+                                        <input type="text" class="form-control" name="new_password" placeholder="New Password">
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +135,7 @@
                                         <label class="form-label">Re Password</label>
                                     </div>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control"  placeholder="Re Password" name="Repassword">
+                                        <input type="text" class="form-control" name="re_password"  placeholder="Re Password">
                                     </div>
                                 </div>
                             </div>

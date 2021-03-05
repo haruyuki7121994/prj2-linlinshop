@@ -9,14 +9,15 @@ class Order extends Model
     //define status
     const PENDING = 0;
     const APPROVE = 1;
-    const DELIVERY = 2;
-    const PAID = 3;
+    const PAID = 2;
+    const FAIL = 3;
 
     //define payment method
     const COD = 0;
     const TRANSFER = 1;
 
-    const LIST_STATUS = ['Pending', 'Approve', 'Delivery', 'Paid'];
+    const LIST_STATUS = ['Pending', 'Approve', 'Paid', 'Fail'];
+    const LIST_METHOD = ['COD', 'TRANSFER'];
 
     protected $table = 'orders';
     protected $fillable = [

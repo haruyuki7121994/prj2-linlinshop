@@ -29,14 +29,21 @@ Route::bind('attr', function ($key) {
     return \App\ProductAttribute::with(['product', 'color', 'size', 'images'])->whereId($key)->first() ?? abort(404);
 });
 Route::bind('order', function ($key) {
-    return \App\Order::with(['detail'])->whereCode($key)->first() ?? abort(404);
+    $user = Auth::user();
+    return $user && $user->isAdmin()
+        ? (\App\Order::with(['detail', 'user', 'province'])->whereId($key)->first() ?? abort(404) )
+        : ( \App\Order::with(['detail'])->whereCode($key)->first() ?? abort(404) );
 });
 Route::bind('code', function ($key) {
     return \App\User::whereIsActive(\App\User::INACTIVE)->whereRememberToken($key)->first() ?? abort(404);
 });
+Route::bind('user', function ($key) {
+    return \App\User::with('orders')->whereId($key)->IsActive()->first() ?? abort(404);
+});
 
 //frontend
 Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
+
     Route::get('/home', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
     Route::get('/collection/{collection}', [\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('collection');
     Route::get('/all', [\App\Http\Controllers\Frontend\ProductController::class, 'all'])->name('all');
@@ -58,6 +65,9 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
 
     //contact-us
     Route::get('/contact-us', [\App\Http\Controllers\Frontend\PageController::class, 'contact'])->name('contact');
+    Route::get('/transport', [\App\Http\Controllers\Frontend\PageController::class, 'transport'])->name('transport');
+    Route::get('/warranty-policy', [\App\Http\Controllers\Frontend\PageController::class, 'warranty'])->name('warranty');
+    Route::get('/term-of-use', [\App\Http\Controllers\Frontend\PageController::class, 'term'])->name('term');
 });
 
 //admin
@@ -67,6 +77,7 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.', 'middleware' => 'admin'], funct
     Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('index');
         Route::post('/update', [\App\Http\Controllers\Admin\AdminController::class, 'update'])->name('update');
+        Route::post('/re-password', [\App\Http\Controllers\Admin\AdminController::class, 'repassword'])->name('repassword');
     });
 
     Route::resource('user', 'Admin\UserController')->except(['store', 'create', 'show']);
@@ -103,5 +114,8 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/register', [\App\Http\Controllers\Auth\AuthController::class, 'register'])->name('register.index');
     Route::post('/register/verify', [\App\Http\Controllers\Auth\AuthController::class, 'verify'])->name('register.verify');
     Route::get('/confirm/{code}', [\App\Http\Controllers\Auth\AuthController::class, 'confirm'])->name('register.confirm');
+    Route::get('/profile', [\App\Http\Controllers\Auth\AuthController::class, 'profile'])->name('profile.index');
+    Route::post('/profile/update', [\App\Http\Controllers\Auth\AuthController::class, 'update'])->name('profile.update');
+    Route::post('/profile/re-password', [\App\Http\Controllers\Auth\AuthController::class, 'repassword'])->name('profile.repassword');
 });
 

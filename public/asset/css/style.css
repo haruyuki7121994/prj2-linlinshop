@@ -81,11 +81,10 @@ ul {
 }
 
 .imgcaro {
-    /* height: 600px;
-    width: 1480px; */
     max-width: 100%;
-    height: auto;
-
+    height: 500px;
+    margin: auto;
+    display: block;
 }
 
 .bordercaro {

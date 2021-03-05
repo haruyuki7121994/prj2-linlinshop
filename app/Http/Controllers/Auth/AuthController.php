@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Requests\Cms\Profile\RepasswordRequest;
+use App\Http\Requests\Cms\Profile\UpdateRequest;
 use App\Mail\VerifyMail;
 use App\Province;
 use App\User;
@@ -60,5 +62,27 @@ class AuthController extends Controller
     {
         $user->update(['is_active' => User::ACTIVE]);
         return redirect()->route('frontend.home');
+    }
+
+    public function profile()
+    {
+        $provinces = Province::IsActive()->get();
+        return view('frontend.auth.profile', compact('provinces'));
+    }
+
+    public function update(UpdateRequest $request)
+    {
+        $user = Auth::user();
+        return $user->update($request->all())
+            ? redirect()->back()->withSuccess('Update profile successful !')
+            : redirect()->back()->withErrors('Cannot update profile');
+    }
+
+    public function repassword(RepasswordRequest $request)
+    {
+        $user = Auth::user();
+        return $user->update(['password' => $request->password])
+            ? redirect()->back()->withSuccess('Update profile successful !')
+            : redirect()->back()->withErrors('Cannot update profile');
     }
 }

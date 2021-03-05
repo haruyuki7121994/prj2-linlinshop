@@ -37,61 +37,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($orders as $order)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>#000001</td>
-                                    <td>Petey Cruiser</td>
-                                    <td>20$</td>
-                                    <td>Paid</td>
+                                    <th scope="row">{{$order->id}}</th>
+                                    <td>#{{$order->code}}</td>
+                                    <td>{{$order->user->name}}</td>
+                                    <td>{{$order->total}}$</td>
+                                    <td>{{\App\Order::LIST_STATUS[$order->status]}}</td>
                                     <td>
-                                        <a href="invoice.html"><button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button></a>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                        <x-button classType="success">
+                                            <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                            {{route('cms.order.edit', $order->id)}}
+                                        </x-button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>#000002</td>
-                                    <td>Petey Cruiser</td>
-                                    <td>40$</td>
-                                    <td>Pending</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>#000003</td>
-                                    <td>Petey Cruiser</td>
-                                    <td>50$</td>
-                                    <td>Pre-Pending</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>#000004</td>
-                                    <td>Petey Cruiser</td>
-                                    <td>60$</td>
-                                    <td>Delivery</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>#000005</td>
-                                    <td>Petey Cruiser</td>
-                                    <td>20$</td>
-                                    <td>Paid</td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->

@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->is_admin === self::IS_ADMIN;
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
 }

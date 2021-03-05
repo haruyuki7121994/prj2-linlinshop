@@ -8,10 +8,6 @@
 
     <ul class="navbar" style="margin:auto;">
         <div id="my-na" class="collapse navbar-collapse">
-            <li class="nav-item active dropdown">
-                <a class="nav-link" style=" font-size: 0.7em; color: white; font-weight: bolder;" href="{{route('frontend.all')}}">
-                    ALL PRODUCTS</a>
-            </li>
             @foreach(\App\Category::$staticList as $key => $groupCate)
                 <li class="nav-item active dropdown">
                     <a style="font-weight: bolder; font-size: 0.7em; color: white; "
@@ -31,7 +27,7 @@
     <form class="form-inline my-2 my-lg-0">
         <div style="padding: 0.5em; border-radius: 0.5em;">
             <a id="my-cart" style="font-size: 1.5em; margin: auto; font-weight: bolder; color: white" href="{{route('frontend.cart.index')}}">
-                <i style="color: white;" class="fa fa-shopping-bag"></i>({{$totalCart}})
+                <i style="color: white;" class="fa fa-shopping-bag"></i>(<span id="total-cart">{{$totalCart}}</span>)
             </a>
         </div>
 

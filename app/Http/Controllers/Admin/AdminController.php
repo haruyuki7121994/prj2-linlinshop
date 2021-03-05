@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Http\Requests\Cms\Profile\RepasswordRequest;
 use App\Http\Requests\Cms\Profile\UpdateRequest;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 class AdminController extends Controller
 {
@@ -19,8 +18,14 @@ class AdminController extends Controller
         $admin = \Auth::user();
         return $admin->update($request->validated())
         ? redirect()->route('cms.profile.index')->withSuccess('Update admin is successful')
-        : redirect()->route('cms.profile.index')->withErrors('Cannot create admin');
+        : redirect()->route('cms.profile.index')->withErrors('Cannot update admin');
     }
 
-   
+    public function repassword(RepasswordRequest $request)
+    {
+        $admin = \Auth::user();
+        return $admin->update(['password' => \Hash::make($request->new_password)])
+            ? redirect()->route('cms.profile.index')->withSuccess('Update admin is successful')
+            : redirect()->route('cms.profile.index')->withErrors('Cannot update admin');
+    }
 }

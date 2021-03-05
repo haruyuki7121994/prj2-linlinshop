@@ -200,9 +200,10 @@
                     })
                         .done(function( msg ) {
                             if (msg.stt === 'success') {
-                                if (msg.msg.length === 0) window.location.href = '{{route('frontend.home')}}'
+                                if (msg.msg.cart.length === 0) window.location.href = '{{route('frontend.home')}}'
                                 resetVar()
-                                showCart(msg.msg)
+                                showCart(msg.msg.cart)
+                                $('#total-cart').html(msg.msg.total)
                             }
                         });
                 }

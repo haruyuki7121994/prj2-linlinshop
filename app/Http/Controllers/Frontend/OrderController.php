@@ -39,7 +39,8 @@ class OrderController extends Controller
                 'sub_total' => $subTotal,
                 'shipping_fee' => $shipping,
                 'vat' => $vat,
-                'total' => (float)$subTotal + (float)$shipping + (float)$vat
+                'total' => (float)$subTotal + (float)$shipping + (float)$vat,
+                'user_id' => \Auth::check() ? \Auth::id() : null,
             ]);
             $order = Order::create($request->all());
             $this->convertCartToOrderDetail($order);
