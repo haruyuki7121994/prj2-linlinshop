@@ -18,11 +18,13 @@ class CartService
             $session = $this->checkSession('guest' . now()->timestamp);
             session()->put('session-cart', $session);
 
+            $promotionPrice = $productAttr->getPromotionPrice();
+
             \Cart::session($session);
             \Cart::add([
                 'id' => $productAttr->id,
                 'name' => $productAttr->product->name,
-                'price' => $productAttr->price,
+                'price' => $promotionPrice ?? $productAttr->price,
                 'quantity' => $qty,
                 'attributes' => [
                     'size' => $productAttr->size->name,

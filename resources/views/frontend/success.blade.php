@@ -47,13 +47,21 @@
                     @foreach($order->detail as $itm)
                     <tr>
                         <th scope="row">{{$itm->productAttr->product->name}}</th>
-                        <td>{{$itm->real_price}}$</td>
-                        <td>{{$itm->qty}}$</td>
+                        <td>
+                            @if($itm->unit_price > $itm->real_price)
+                                <del>${{$itm->unit_price}}</del>
+                                <br>
+                                <span style="color: red">${{$itm->real_price}}</span>
+                            @else
+                                ${{$itm->real_price}}
+                            @endif
+                        </td>
+                        <td>{{$itm->qty}}</td>
                         <td>
                             Size: {{$itm->productAttr->size->name}}<br>
                             Color: {{$itm->productAttr->color->name}}
                         </td>
-                        <td>{{$itm->total_price}}$</td>
+                        <td>${{$itm->total_price}}</td>
                     </tr>
                     @endforeach
                     </tbody>
@@ -62,23 +70,23 @@
                         <td colspan="4">
                             Subtotal
                         </td>
-                        <td>{{$order->sub_total}}$</td>
+                        <td>${{$order->sub_total}}</td>
                     </tr>
                     <tr>
                         <td colspan="4">
                             Shipping
                         </td>
-                        <td>{{$order->shipping_fee}}$</td>
+                        <td>${{$order->shipping_fee}}</td>
                     </tr>
                     <tr>
                         <td colspan="4">
                             Vat
                         </td>
-                        <td>{{$order->vat}}$</td>
+                        <td>${{$order->vat}}</td>
                     </tr>
                     <tr>
                         <th colspan="4">Total</th>
-                        <th>{{$order->total}}$</th>
+                        <th>${{$order->total}}</th>
                     </tr>
                     </tfoot>
                 </table>

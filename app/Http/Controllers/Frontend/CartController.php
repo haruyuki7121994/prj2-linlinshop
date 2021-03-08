@@ -39,7 +39,9 @@ class CartController extends Controller
 
     public function add(AddRequest $request)
     {
-        $productAttr = ProductAttribute::with(['color', 'size', 'images', 'product'])->where(['product_id' => $request['product-id'], 'size_id' => $request['size-id'], 'color_id' => $request['color-id']])->first();
+        $productAttr = ProductAttribute::with(['color', 'size', 'images', 'product', 'promotion'])
+            ->where(['product_id' => $request['product-id'], 'size_id' => $request['size-id'], 'color_id' => $request['color-id']])
+            ->first();
         if (!$productAttr) return response()->json(['stt' => 'error', 'msg' => 'invalid product attribute']);
         if ($productAttr->qty < $request->qty) return response()->json(['stt' => 'error', 'msg' => 'invalid qty']);
 

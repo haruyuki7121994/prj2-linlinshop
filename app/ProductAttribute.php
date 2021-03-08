@@ -36,4 +36,17 @@ class ProductAttribute extends Model
     {
         return $this->hasOne(Image::class, 'product_attr_id');
     }
+
+    public function hasPromotion()
+    {
+        $now = now()->toDateString();
+        if (is_null($this->promotion_id)) return false;
+        $promotion = $this->promotion;
+        return $promotion->is_active == Promotion::ACTIVE && $promotion->from_date <= $now && $promotion->end_date >= $now;
+    }
+
+    public function getPromotionPrice()
+    {
+        return $this->hasPromotion() ? ($this->price) - ($this->price * $this->promotion->percentage / 100) : null;
+    }
 }

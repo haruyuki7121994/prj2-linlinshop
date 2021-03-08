@@ -43,7 +43,8 @@
                         </div>
 
                         <div class="price">
-                            <p>Price: {{$productAttrs->first()->price}}$ </p>
+                            @php $salePrice = $productAttrs->first()->getPromotionPrice() @endphp
+                            <p>Price: @if($salePrice) <span style="color: red">${{$salePrice}} (-{{$productAttrs->first()->promotion->percentage}}%)</span> @else ${{$productAttrs->first()->price}} @endif</p>
                         </div>
 
 

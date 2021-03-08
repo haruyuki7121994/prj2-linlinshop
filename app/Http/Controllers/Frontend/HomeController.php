@@ -6,12 +6,17 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductAttribute;
+use App\Promotion;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $products = ProductAttribute::with(['product.category', 'images'])->orderBy('id', 'desc')->get();
+        $products = ProductAttribute::with(['product.category', 'images', 'promotion', 'product'])->orderBy('id', 'desc')->get();
+
+        $saleProducts = $products->filter(function ($itm) {
+            return $itm->hasPromotion();
+        })->unique('product_id')->take(8);
 
         $featuredProducts = $products->filter(function ($itm) {
             return $itm->product->is_featured == Product::IS_FEATURED;
@@ -25,6 +30,6 @@ class HomeController extends Controller
 
         $accessories = $this->filterProdsByCategories($products, \Arr::flatten(Category::$staticList['accessories']));
 
-        return view('frontend.home', compact('featuredProducts', 'clothes', 'handbags', 'shoes', 'accessories'));
+        return view('frontend.home', compact('featuredProducts', 'clothes', 'handbags', 'shoes', 'accessories', 'saleProducts'));
     }
 }
