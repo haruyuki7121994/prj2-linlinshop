@@ -78,7 +78,7 @@
                                     <div class="media-body">
                                         <div class="d-flex align-items-center">
                                             <div class="mt-0">
-                                                <h5 class="mb-1 tx-15">User: {{$order->user->name}}</h5>
+                                                <h5 class="mb-1 tx-15">User: @if($order->user) {{$order->user->name}} @else Guest @endif</h5>
                                                 <p class="mb-0 tx-13 text-muted">Order Id: #{{$order->code}} <span class="{{$order->status == \App\Order::FAIL ? 'text-danger' : 'text-success'}} ml-2">{{\App\Order::LIST_STATUS[$order->status]}}</span></p>
                                             </div>
                                             <span class="ml-auto wd-45p fs-16 mt-2">

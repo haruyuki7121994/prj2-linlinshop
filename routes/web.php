@@ -87,7 +87,7 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.', 'middleware' => 'admin'], funct
     Route::resource('comment', 'Admin\CommentController')->except(['show']);
     Route::resource('order', 'Admin\OrderController')->except(['show']);
     Route::resource('promotion', 'Admin\PromotionController');
-    Route::get('/promotion/{promotion}/add', [\App\Http\Controllers\Admin\PromotionController::class, 'add'])->name('promotion.add');
+    Route::post('/promotion/{promotion}/add', [\App\Http\Controllers\Admin\PromotionController::class, 'add'])->name('promotion.add');
     Route::post('/promotion/remove', [\App\Http\Controllers\Admin\PromotionController::class, 'remove'])->name('promotion.remove');
     Route::resource('province', 'Admin\ProvinceController')->except(['show']);
     Route::resource('size', 'Admin\SizeController')->except(['show']);

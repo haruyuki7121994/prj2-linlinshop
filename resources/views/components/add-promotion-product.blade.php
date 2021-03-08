@@ -9,15 +9,15 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <select class="form-control" id="color_id">
+                        <select name="product_id" class="form-control" id="product_id">
                             @foreach($products as $product)
-                            <option value="{{$product->id}}">{{$product->product->name}} - Color: {{$product->color->name}} - Size: {{$product->size->name}}</option>
+                            <option value="{{$product->product->id}}">{{$product->product->name}}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn ripple btn-primary" id="btn-variant" type="button">Submit</button>
+                    <button class="btn ripple btn-primary" id="btn-variant" type="submit">Submit</button>
                     <button class="btn ripple btn-secondary" data-dismiss="modal" type="button">Close</button>
                 </div>
             </form>

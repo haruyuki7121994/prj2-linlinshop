@@ -25,12 +25,18 @@
                             <div class="row mg-t-20">
                                 <div class="col-md">
                                     <label class="tx-gray-600">Billed To</label>
+                                    @if($order->user)
                                     <div class="billed-to">
                                         <h6>{{$order->user->name}}</h6>
                                         <p>{{$order->user->address}}<br>
                                             Tel No: {{$order->user->mobile}}<br>
                                             Email: {{$order->user->email}}</p>
                                     </div>
+                                    @else
+                                    <div class="billed-to">
+                                        <h6>Guest</h6>
+                                    </div>
+                                    @endif
                                 </div>
                                 <div class="col-md">
                                     <label class="tx-gray-600">Invoice Information</label>

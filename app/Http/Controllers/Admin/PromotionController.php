@@ -49,14 +49,18 @@ class PromotionController extends Controller
 
     public function show(Promotion $promotion)
     {
-        $notPromotionProducts = ProductAttribute::with(['product', 'color', 'size'])->whereNull('promotion_id')->orderBy('id', 'desc')->get();
-        $promotionProducts = $promotion->productAttr()->with('product')->get();
+        $notPromotionProducts = ProductAttribute::with(['product', 'color', 'size'])->whereNull('promotion_id')->orderBy('id', 'desc')->get()->unique('product_id');
+        $promotionProducts = $promotion->productAttr()->with('product')->get()->unique('product_id');
         return view('cms.promotion.promotion_product', compact('promotion', 'notPromotionProducts', 'promotionProducts'));
     }
 
     public function add(Promotion $promotion, Request $request)
     {
-        dd($request->all());
+        $productAttrs = ProductAttribute::where('product_id', $request->product_id)->get();
+        foreach ($productAttrs as $productAttr) {
+            $productAttr->update(['promotion_id' => $promotion->id]);
+        }
+        return redirect()->back();
     }
 
     public function remove(Request $request)

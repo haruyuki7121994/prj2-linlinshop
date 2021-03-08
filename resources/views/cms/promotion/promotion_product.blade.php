@@ -16,7 +16,7 @@
                         <form class="form-horizontal" >
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name" value="Happy New Year" disabled>
+                                <input type="text" class="form-control" id="inputName" placeholder="Name" value="{{$promotion->name}}" disabled>
                             </div>
                             <div class="row row-sm" style="margin-bottom: 15px">
 
@@ -26,7 +26,7 @@
                                         <div class="input-group-text">
                                             From Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" value="01/01/2021" disabled>
+                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="text" value="{{$promotion->from_date}}" disabled>
                                 </div>
                             </div>
 
@@ -36,7 +36,7 @@
                                         <div class="input-group-text">
                                             To Date:
                                         </div>
-                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" value="01/31/2021" type="text" disabled>
+                                    </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" value="{{$promotion->end_date}}" type="text" disabled>
                                 </div>
                             </div>
 
@@ -51,37 +51,21 @@
                                     <table class="table table-striped mg-b-0 text-md-nowrap">
                                         <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Product</th>
                                             <th>Percentage</th>
                                             <th>Active</th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($promotionProducts as $product)
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Shirt 1</td>
-                                            <td>20%</td>
+                                            <td>{{$product->product->name}}</td>
+                                            <td>{{$promotion->percentage}}%</td>
                                             <td>
                                                 <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Shirt 2</td>
-                                            <td>20%</td>
-                                            <td>
-                                                <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Shirt 3</td>
-                                            <td>20%</td>
-                                            <td>
-                                                <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div><!-- bd -->

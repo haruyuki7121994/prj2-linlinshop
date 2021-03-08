@@ -41,7 +41,7 @@
                                 <tr>
                                     <th scope="row">{{$order->id}}</th>
                                     <td>#{{$order->code}}</td>
-                                    <td>{{$order->user->name}}</td>
+                                    <td>@if($order->user) {{$order->user->name}} @else Guest @endif</td>
                                     <td>{{$order->total}}$</td>
                                     <td>{{\App\Order::LIST_STATUS[$order->status]}}</td>
                                     <td>
