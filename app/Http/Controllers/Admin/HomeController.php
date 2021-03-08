@@ -30,7 +30,6 @@ class HomeController extends Controller
         //sales activity
         $totalProduct = Product::count('*');
         $totalPromotion = Promotion::count('*');
-
         return view('cms.dashboard', compact('totalAmount', 'totalOrder', 'totalUser', 'totalSoldProduct', 'recentOrders', 'totalProduct', 'totalPromotion'));
     }
 }

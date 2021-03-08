@@ -19,6 +19,6 @@ class Promotion extends Model
 
     public function productAttr()
     {
-        return $this->belongsTo(ProductAttribute::class, 'promotion_id');
+        return $this->hasMany(ProductAttribute::class, 'promotion_id');
     }
 }
