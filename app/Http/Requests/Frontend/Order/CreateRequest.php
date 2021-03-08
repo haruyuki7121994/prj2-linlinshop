@@ -16,6 +16,7 @@ class CreateRequest extends FormRequest
             'email' => 'required|email',
             'province_id' => 'required|exists:transports,province_id',
             'house_number_street' => 'required',
+            'payment_method' => ['required', 'in:' . Order::COD . ',' . Order::TRANSFER]
         ];
     }
 

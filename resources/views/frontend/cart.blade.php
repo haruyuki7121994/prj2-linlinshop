@@ -8,6 +8,7 @@
                     <div class="col-md-8">
                         <div class="thongtin" style="background-color: whitesmoke; padding: 1em;">
                             <fieldset>
+                                @include('cms.layout.message')
                                 <form action="{{route('frontend.order.handle')}}" method="post">
                                     @csrf
                                     <h1>Delivery information</h1>
@@ -40,7 +41,7 @@
                                     <div class="hinhthucthanhtoan">
                                         <h1>Payment method</h1>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="cod" id="flexRadioDefault1" checked>
+                                            <input class="form-check-input" type="radio" name="payment_method" value="cod" id="flexRadioDefault1" checked>
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 <i class="fas fa-truck"></i>
                                                 COD (
@@ -48,7 +49,7 @@
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="transfer" id="flexRadioDefault2">
+                                            <input class="form-check-input" type="radio" name="payment_method" value="transfer" id="flexRadioDefault2">
                                             <label class="form-check-label" for="flexRadioDefault2">
                                                 <i class="far fa-credit-card"></i>
                                                 Pay by credit card
