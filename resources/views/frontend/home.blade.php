@@ -102,18 +102,18 @@
         </div>
         @endif
 
-        <br><br>
+        <br>
 
         <div class="hinhchay">
             <div class="col-md-12">
                 <x-breadcrumb category="WOMEN'S CLOTHING" action="{{route('frontend.all', ['category' => 'clothes'])}}" view="homepage"/>
-                <div class="row">
-                    <x-representative-products class="col-md-2" :itms="$clothes"/>
+                <div class="row"> 
+                    <x-representative-products class="col-md-2"  :itms="$clothes"/>
                 </div>
             </div>
         </div>
         <br>
-        <br>
+        
         <div class="hinhchay">
             <div class="col-md-12">
                 <div class="row">
@@ -130,11 +130,11 @@
                         </div>
                     </div>
                 </div>
-                <br>
+            
             </div>
         </div>
         <br>
-        <br>
+        
         <div class="hinhchay">
             <div class="col-md-12">
                 <x-breadcrumb category="ACCESSORIES FOR WOMEN" action="{{route('frontend.all', ['category' => 'accessories'])}}" view="homepage"/>
