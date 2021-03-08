@@ -1,9 +1,9 @@
 @extends('frontend.layout.master')
 @section('content')
 <section>
-    <div class="container">
-        <br><br>
+    <div class="container">        
         <div class="borderlogin">
+            <h2 style="text-align: center; font-weight: bolder; font-size: 3em" >Information</h2>
             <p style="text-align: center;">Contact here for assistance <br>
                 <a class="a12" href="mailtoiphoneboy46@gmail.com">iphoneboy46@gmail.com </a>
             </p>

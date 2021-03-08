@@ -67,30 +67,33 @@
                                 <h1 style="text-align: center;">Your cart</h1>
                                 <hr>
                             </div>
-                            @foreach($cartItems as $itm)
-                            <div class="row" id="item-{{$itm->id}}">
-                                <div class="col">
-                                    <img src="{{$itm->attributes->image}}" alt="" class="imggiohang">
-                                </div>
-
-                                <div class="col">
-                                    <div style="background-color: white; padding: 5px; height: 100%">
-                                        <a style="font-size: 20px" href="{{route('frontend.product', $itm->attributes->slug)}}"><div>{{Str::limit($itm->name, 10, $end='...')}}</div></a>
-                                        <label style="font-weight: bolder;">Color: </label> {{$itm->attributes->color}} <br>
-                                        <label style="font-weight: bolder;">Size: </label> {{$itm->attributes->size}} <br>
-                                        <label style="font-weight: bolder;">Price: </label> {{$itm->price}}$ <br>
-                                        <div class="soluongsp">
-                                            <div>
-                                                <button data-id="{{$itm->id}}" style="width: 15%; background-color:black; color: white;" class="soluong btn-plus">+</button>
-                                                <span style="margin: 0 10px">{{$itm->quantity}}</span>
-                                                <button data-id="{{$itm->id}}" class="soluong btn-minus" style="width: 15%;  background-color: black; color: whitesmoke;">-</button>
+                            <div style="overflow-y: auto; overflow-x: hidden; height: 330px; ">
+                                @foreach($cartItems as $itm)
+                                <div class="row"  id="item-{{$itm->id}}">
+                                    <div class="col">
+                                        <img src="{{$itm->attributes->image}}" alt="" class="imggiohang">
+                                    </div>
+    
+                                    <div class="col">
+                                        <div style="background-color: white; padding: 5px; height: 100%">
+                                            <a style="font-size: 20px" href="{{route('frontend.product', $itm->attributes->slug)}}"><div>{{Str::limit($itm->name, 10, $end='...')}}</div></a>
+                                            <label style="font-weight: bolder;">Color: </label> {{$itm->attributes->color}} <br>
+                                            <label style="font-weight: bolder;">Size: </label> {{$itm->attributes->size}} <br>
+                                            <label style="font-weight: bolder;">Price: </label> {{$itm->price}}$ <br>
+                                            <div class="soluongsp">
+                                                <div>
+                                                    <button data-id="{{$itm->id}}" style="width: 15%; background-color:black; color: white;" class="soluong btn-plus">+</button>
+                                                    <span style="margin: 0 10px">{{$itm->quantity}}</span>
+                                                    <button data-id="{{$itm->id}}" class="soluong btn-minus" style="width: 15%;  background-color: black; color: whitesmoke;">-</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><br>
+                                    </div><br>
+                                </div>
+                                <br>
+                                @endforeach
                             </div>
-                            <br>
-                            @endforeach
+                          
 
                             <div class="tinhtien" style="background-color: white; padding: 10px">
                                 <div class="row">
