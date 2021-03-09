@@ -29,7 +29,7 @@ class AuthController extends Controller
             return Auth::user()->isAdmin()
                 ? redirect()->route('cms.index')
                 : redirect()->route('frontend.home');
-        } else return redirect()->route('auth.login.index');
+        } else return back()->withErrors('Invalid User');
     }
 
     public function logout()

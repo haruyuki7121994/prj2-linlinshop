@@ -24,7 +24,9 @@ class ProductController extends Controller
             ->leftJoin('colors', 'colors.id', '=', 'product_attributes.color_id')
             ->leftJoin('sizes', 'sizes.id', '=', 'product_attributes.size_id')
             ->get();
-        return view('frontend.product', compact('product', 'productAttrs'));
+
+        $comments = $product->comments;
+        return view('frontend.product', compact('product', 'productAttrs', 'comments'));
     }
 
     public function all(Request $request)

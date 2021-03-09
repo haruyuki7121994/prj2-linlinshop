@@ -47,6 +47,8 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
     Route::get('/all', [\App\Http\Controllers\Frontend\ProductController::class, 'all'])->name('all');
     Route::get('/product/{product}', [\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('product');
 
+    Route::post('/comment', [\App\Http\Controllers\Frontend\CommentController::class, 'comment'])->name('comment');
+
     //search
     Route::get('/search', [\App\Http\Controllers\Frontend\HomeController::class, 'search'])->name('search');
 

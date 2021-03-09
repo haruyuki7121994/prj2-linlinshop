@@ -126,12 +126,21 @@
                         <br>
                         Good product
                     </p>
+                    @if(Auth::check())
                     <div class="form-group">
-
-                        <textarea class="form-control" name="cmt" id="" rows="3"></textarea>
-                        <input name="cmt" type="submit" value="Comment" class="btn btn-danger">
-
+                        @include('cms.layout.message')
+                        <form method="post" action="{{route('frontend.comment')}}">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{Auth::id()}}">
+                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                            <textarea class="form-control" name="description" id="" rows="3"></textarea>
+                            <br>
+                            <input name="cmt" type="submit" value="Comment" class="btn btn-danger">
+                        </form>
                     </div>
+                    @else
+                        <a href="{{route('auth.login.index')}}">Please login to comment!</a>
+                    @endif
                 </div>
 
             </div>

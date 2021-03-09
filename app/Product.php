@@ -33,4 +33,9 @@ class Product extends Model
     {
         return $this->hasManyThrough(Image::class, ProductAttribute::class, 'product_id', 'product_attr_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'product_id');
+    }
 }
