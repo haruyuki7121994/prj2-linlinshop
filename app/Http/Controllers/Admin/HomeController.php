@@ -8,6 +8,7 @@ use App\OrderDetail;
 use App\Product;
 use App\Promotion;
 use App\User;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

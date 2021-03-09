@@ -8,7 +8,7 @@
                         you have a happy and happy shopping day. Thank you
                         - - - - </marquee>
                     <div style="display: block;background-color: black; padding: 0.5em; ">
-                        <h1 style="text-align: center; font-size: 2em; color: white; font-weight: bolder;">{{$category->name}}</h1>
+                        <h1 style="text-align: center; font-size: 2em; color: white; font-weight: bolder;">{{$category->name ?? $category}}</h1>
                     </div>
                     <br>
                     <div class="row">

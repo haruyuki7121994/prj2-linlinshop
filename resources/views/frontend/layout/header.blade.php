@@ -67,19 +67,19 @@
 
                 <!-- Body: Form -->
                 <div class="modal-body">
-                    <form>
+                    <form method="get" action="{{route('frontend.search')}}">
                         <div class="form-group">
                             <label class="sr-only" for="modalSearchCategories">Categories:</label>
-                            <select class="custom-select" id="modalSearchCategories">
-                                <option selected="">All Categories</option>
-                                <option>WOMEN'S CLOTHING</option>
-                                <option>WOMEN'S SHOES</option>
-                                <option>WOMEN'S HANDBAGS</option>
-                                <option>ACCESSORIES FOR WOMEN</option>
+                            <select name="category" class="custom-select" id="modalSearchCategories">
+                                <option value="" selected="">All Categories</option>
+                                <option value="clothes">WOMEN'S CLOTHING</option>
+                                <option value="shoes">WOMEN'S SHOES</option>
+                                <option value="handbags">WOMEN'S HANDBAGS</option>
+                                <option value="accessories">ACCESSORIES FOR WOMEN</option>
                             </select>
                         </div>
                         <div class="input-group input-group-merge">
-                            <input class="form-control" type="search" placeholder="Search">
+                            <input class="form-control" type="search" name="key" placeholder="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-border" type="submit">
                                     <i class="fa fa-search"></i>
@@ -88,6 +88,7 @@
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </div>

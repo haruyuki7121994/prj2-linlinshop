@@ -69,7 +69,15 @@
                                         <td>{{$attr->product->name}} ({{$attr->size->name}}-{{$attr->color->name}})</td>
                                         <td class="tx-12">{{$attr->product->description}}</td>
                                         <td class="tx-center">{{$itm->qty}}</td>
-                                        <td class="tx-right">${{$itm->unit_price}}</td>
+                                        @php $realPrice = $attr->getPromotionPrice() @endphp
+                                        <td class="tx-right">
+                                            @if($realPrice)
+                                            ${{$realPrice}} <br>
+                                            <del>${{$itm->unit_price}}</del>
+                                            @else
+                                                ${{$itm->unit_price}}
+                                            @endif
+                                        </td>
                                         <td class="tx-right">${{$itm->real_price}}</td>
                                     </tr>
                                     @endforeach

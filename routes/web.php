@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
 
 //binding
 Route::bind('collection', function ($key) {
@@ -48,6 +46,9 @@ Route::group(['prefix' => '/', 'as' => 'frontend.'], function () {
     Route::get('/collection/{collection}', [\App\Http\Controllers\Frontend\ProductController::class, 'index'])->name('collection');
     Route::get('/all', [\App\Http\Controllers\Frontend\ProductController::class, 'all'])->name('all');
     Route::get('/product/{product}', [\App\Http\Controllers\Frontend\ProductController::class, 'detail'])->name('product');
+
+    //search
+    Route::get('/search', [\App\Http\Controllers\Frontend\HomeController::class, 'search'])->name('search');
 
     //transport
     Route::post('/transport', [\App\Http\Controllers\Frontend\TransportController::class, 'get'])->name('transport.get');
