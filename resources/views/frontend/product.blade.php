@@ -111,7 +111,7 @@
                     <!--show comment-->
                     @foreach($comments as $comment)
                     <p>
-                        {{$comment->user_id}}<br>
+                        <strong>{{$comment->user->name}}</strong><br>
                         <span style="color:orange; font-size: 1em;">5/5 <i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i></span>

@@ -14,7 +14,7 @@ class CommentController extends Controller
         $request->validate(['description'=>'required']);
         $comments = new Comment;
         $comments->product_id = $request->product_id;
-        $comments->user_id = $request->user_id;
+        $comments->user_id = $request->user()->id;
         $comments->description = $request->description;
         $comments->save();
         return back();
