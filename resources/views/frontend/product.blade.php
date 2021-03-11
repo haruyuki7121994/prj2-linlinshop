@@ -108,32 +108,29 @@
             <div style="border: solid; padding: 1em; background-color: whitesmoke;">
                 <h3>Product reviews: </h3>
                 <div class="danhgia">
+                    <!--show comment-->
+                    @foreach($comments as $comment)
                     <p>
-                        Kelly1212 <br>
+                        {{$comment->user_id}}<br>
                         <span style="color:orange; font-size: 1em;">5/5 <i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i></span>
                         <br>
-
-
-                        Good quality products and nice
+                            {{$comment->description}}
+                        
+                        
                     </p>
-                    <p>
-                        Alexis <br>
-                        <span style="color:orange; font-size: 1em;">5/5 <i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></span>
-                        <br>
-                        Good product
-                    </p>
+                    @endforeach
+
+                    <!--add comment-->
                     @if(Auth::check())
                     <div class="form-group">
                         @include('cms.layout.message')
                         <form method="post" action="{{route('frontend.comment')}}">
                             @csrf
-                            <input type="hidden" name="user_id" value="{{Auth::id()}}">
-                            <input type="hidden" name="product_id" value="{{$product->id}}">
-                            <textarea class="form-control" name="description" id="" rows="3"></textarea>
+                            <input type="hidden" name="user_id" id="user_id" value="{{Auth::id()}}">
+                            <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
+                            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                             <br>
                             <input name="cmt" type="submit" value="Comment" class="btn btn-danger">
                         </form>
