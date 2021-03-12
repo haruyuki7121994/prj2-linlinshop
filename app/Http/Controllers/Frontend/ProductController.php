@@ -26,7 +26,14 @@ class ProductController extends Controller
             ->get();
 
         $comments = $product->comments;
-        return view('frontend.product', compact('product', 'productAttrs', 'comments'));
+
+        $relatedProducts = ProductAttribute::with(['images'])->select('product_attributes.*')
+            ->leftJoin('products', 'products.id', '=', 'product_attributes.product_id')
+            ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+            ->where('categories.id', $product->category_id)
+            ->where('products.id', '!=', $product->id)
+            ->get()->unique('product_id')->take(4);
+        return view('frontend.product', compact('product', 'productAttrs', 'comments', 'relatedProducts'));
     }
 
     public function all(Request $request)

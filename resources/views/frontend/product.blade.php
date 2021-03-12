@@ -117,8 +117,8 @@
                                 class="fas fa-star"></i></span>
                         <br>
                             {{$comment->description}}
-                        
-                        
+
+
                     </p>
                     @endforeach
 
@@ -152,118 +152,8 @@
 
             <div class="sanpham" style="border: solid; padding: 1em;">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="bordershopping" style="overflow: auto;">
-                            <div id="carousel" class="carousel-fade " data-ride="carousel">
+                    <x-representative-products :itms="$relatedProducts" class="col-md-3"></x-representative-products>
 
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-
-                                        <a href="reddress2.html"><img class="imgbando" src="redfress/vaydo2.jpg"
-                                                                      alt=""></a>
-
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="reddress2.html"><img class="imgbando" src="redfress/vaydo2,1.jpg"
-                                                                      alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="reddress2.html"><img class="imgbando" src="redfress/vaydo2,2.jpg"
-                                                                      alt=""></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <br>
-                            <a href="reddress2.html" class="abanhang">
-                                <h6 style="text-align: center; font-weight: bolder;color: white;">Red dress hugging</h6>
-                            </a>
-
-                            <h6 style="text-align: center; color:white; font-weight: bolder;">Price: 120$ </h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="bordershopping" style="overflow: auto;">
-                            <div id="carousel" class="carousel-fade " data-ride="carousel">
-
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <a href="Setoftshirtsandjeansskirts.html"><img class="imgbando" src="setdo/setdo2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="Setoftshirtsandjeansskirts.html"><img class="imgbando" src="setdo/setdo2,1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="Setoftshirtsandjeansskirts.html"><img class="imgbando" src="setdo/setdo2,3.jpg" alt=""></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <br>
-                            <a href="Setoftshirtsandjeansskirts.html" class="abanhang">
-                                <h6 style="text-align: center; font-weight: bolder;color: white;">
-                                    Set of t-shirts and jeans skirts</h6>
-                            </a>
-
-                            <h6 style="text-align: center;color: white; font-weight: bolder;">Price: 120$ </h6>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="bordershopping" style="overflow: auto;">
-                            <div id="carousel" class="carousel-fade " data-ride="carousel">
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <a href="Setofclotheswith whiteclothes.html"><img class="imgbando" src="setdo/setdo3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="Setofclotheswith whiteclothes.html"><img class="imgbando" src="setdo/setdo3,2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="Setofclotheswith whiteclothes.html"><img class="imgbando" src="setdo/setdo3,3.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <a href="Setofclotheswith whiteclothes.html" class="abanhang">
-                                <h6 style="text-align: center; font-weight: bolder;color: white;">Set of clothes with white
-                                    clothes</h6>
-                            </a>
-
-                            <h6 style="text-align: center;color: white; font-weight: bolder;">Price: 120$ </h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="bordershopping" style="overflow: auto;">
-                            <div id="carousel" class="carousel-fade " data-ride="carousel">
-                                <!-- Wrapper for slides -->
-                                <div class="carousel-inner" role="listbox">
-                                    <div class="carousel-item active">
-                                        <a href="whitedress1.html"><img class="imgbando" src="vaytrang/vaytrang2,1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="whitedress1.html"><img class="imgbando" src="vaytrang/vaytrang2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="whitedress1.html"><img class="imgbando" src="vaytrang/vaytrang2,2.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <a href="whitedress1.html" class="abanhang">
-                                <h6 style="text-align: center; font-weight: bolder;color: white;">White dress</h6>
-                            </a>
-                            <h6 style="text-align: center;color: white; font-weight: bolder;">Price: 130$ </h6>
-                        </div>
-                    </div>
                 </div>
             </div>
 
