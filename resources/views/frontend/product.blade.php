@@ -34,13 +34,6 @@
                 <div class="col-md-6 col-sm-auto">
                     <div style=" border: solid; padding: 0.5em; background-color: whitesmoke;">
                         <h2 style="color: black;">{{$product->name}} </h2>
-                        <div class="product-single__rating">
-                            <a href="#reviews">
-                                <span style="color:orange; font-size: 1em;">5/5 <i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i></span>
-                            </a>
-                        </div>
 
                         <div class="price">
                             @php $salePrice = $productAttrs->first()->getPromotionPrice() @endphp

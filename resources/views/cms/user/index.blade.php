@@ -50,9 +50,6 @@
                                             <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
                                             {{route('cms.user.edit', $user->id)}}
                                         </x-button>
-                                        <x-delete-form>
-                                            {{route('cms.user.destroy', $user->id)}}
-                                        </x-delete-form>
                                     </td>
                                 </tr>
                                 @endforeach

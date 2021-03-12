@@ -125,19 +125,6 @@
 
 
                                 </div>
-                                <div class="mb-4 main-content-label">Email Preferences</div>
-                                <div class="form-group mb-0">
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <label class="form-label">Verified User</label>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="custom-controls-stacked">
-                                                <label class="ckbox mg-b-10"><input type="checkbox"><span> Accept and Send email</span></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Update Profile</button>

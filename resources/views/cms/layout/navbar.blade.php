@@ -3,17 +3,14 @@
     <div class="container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="index.html"><img src="{{asset('cms/assets/img/brand/logo.png')}}" class="logo-1" alt="logo"></a>
-                <a href="index.html"><img src="{{asset('cms/assets/img/brand/logo-white.png')}}" class="dark-logo-1" alt="logo"></a>
-                <a href="index.html"><img src="{{asset('cms/assets/img/brand/favicon.png')}}" class="logo-2" alt="logo"></a>
-                <a href="index.html"><img src="{{asset('cms/assets/img/brand/favicon.png')}}" class="dark-logo-2" alt="logo"></a>
+                <a href="index.html"><img src="{{asset('asset/images/logo/logochinh.jpg')}}" class="logo-1" alt="logo"></a>
+                <a href="index.html"><img src="{{asset('asset/images/logo/logochinh.jpg')}}" class="dark-logo-1" alt="logo"></a>
+                <a href="index.html"><img src="{{asset('asset/images/logo/logochinh.jpg')}}" class="logo-2" alt="logo"></a>
+                <a href="index.html"><img src="{{asset('asset/images/logo/logochinh.jpg')}}" class="dark-logo-2" alt="logo"></a>
             </div>
             <div class="app-sidebar__toggle" data-toggle="sidebar">
                 <a class="open-toggle" href="#"><i class="header-icon fe fe-align-left" ></i></a>
                 <a class="close-toggle" href="#"><i class="header-icons fe fe-x"></i></a>
-            </div>
-            <div class="main-header-center ml-3 d-sm-none d-md-none d-lg-block">
-                <input class="form-control" placeholder="Search for anything..." type="search"> <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
             </div>
         </div>
         <div class="main-header-right">

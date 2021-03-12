@@ -31,38 +31,6 @@
 
         <!-- row opened -->
         <div class="row row-sm">
-            <div class="col-md-12 col-lg-12 col-xl-12">
-                <div class="card">
-                    <div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
-                        <div class="d-flex justify-content-between">
-                            <h4 class="card-title mb-0">Order status</h4>
-                            <i class="mdi mdi-dots-horizontal text-gray"></i>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="total-revenue">
-                            <div>
-                                <h4>120,750</h4>
-                                <label><span class="bg-primary"></span>Success</label>
-                            </div>
-                            <div>
-                                <h4>56,108</h4>
-                                <label><span class="bg-danger"></span>Pending</label>
-                            </div>
-                            <div>
-                                <h4>32,895</h4>
-                                <label><span class="bg-warning"></span>Failed</label>
-                            </div>
-                        </div>
-                        <div id="bar" class="sales-bar mt-4"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- row closed -->
-
-        <!-- row opened -->
-        <div class="row row-sm">
             <div class="col-xl-6 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header pb-1">
@@ -112,9 +80,6 @@
                             </li>
                             <li class="mt-0"> <i class="si si-eye bg-purple-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Total Customer</span> <a href="{{route('cms.user.index')}}" class="float-right tx-11 text-muted">View more</a>
                                 <p class="mb-0 text-muted tx-12">1k Total Customer</p>
-                            </li>
-                            <li class="mt-0 mb-0"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Customer Reviews</span> <a href="#" class="float-right tx-11 text-muted">1 day ago</a>
-                                <p class="mb-0 text-muted tx-12">1.5k reviews</p>
                             </li>
                         </ul>
                     </div>
