@@ -56,7 +56,7 @@
                                             <th>Color</th>
                                             <th>Qty</th>
                                             <th>Price</th>
-                                            <th>Active</th>
+                                            <th>Selection</th>
                                         </tr>
                                         </thead>
                                         <tbody id="variant-table">

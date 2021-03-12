@@ -30,7 +30,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Position</th>
-                                    <th>Active</th>
+                                    <th>Selection</th>
                                 </tr>
                                 </thead>
                                 <tbody>

@@ -28,7 +28,7 @@
                                     <th>Name</th>
                                     <th>Total Order</th>
                                     <th>Status</th>
-                                    <th>Active</th>
+                                    <th>Selection</th>
                                 </tr>
                                 </thead>
                                 <tbody>

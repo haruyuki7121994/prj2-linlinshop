@@ -35,7 +35,7 @@
                                     <th>To Date</th>
                                     <th>Total Product</th>
                                     <th>Status</th>
-                                    <th>Active</th>
+                                    <th>Selection</th>
                                 </tr>
                                 </thead>
                                 <tbody>

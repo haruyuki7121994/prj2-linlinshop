@@ -33,7 +33,7 @@
                                     <th>User</th>
                                     <th>Total</th>
                                     <th>Status</th>
-                                    <th>Active</th>
+                                    <th>Selection</th>
                                 </tr>
                                 </thead>
                                 <tbody>

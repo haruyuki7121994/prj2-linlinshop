@@ -5,7 +5,7 @@
         <div class="container">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <div class="thongtin" style="background-color: whitesmoke; padding: 1em;">
                             <fieldset>
                                 @include('cms.layout.message')
@@ -20,22 +20,28 @@
                                     @endif
                                     <div class="row">
                                         <div class="col">
+                                            <label for="Name" style="padding-left:0.5em; font-weight:bolder ;">Name</label>
                                             <input class="form-control" value="{{old('shipping_full_name', $user->name ?? '')}}" type="text" name="shipping_full_name" id="name" placeholder="Name" required>
                                         </div>
                                         <div class="col">
+                                            <label for="email" style="padding-left:0.5em;font-weight:bolder ;">Phone</label>
                                             <input class="form-control" value="{{old('shipping_mobile', $user->mobile ?? '')}}" type="tel" name="shipping_mobile" id="phone" placeholder="Phone" required>
                                         </div>
 
                                     </div>
-                                    <br>
-                                    <input type="email" name="email" value="{{old('name', $user->name ?? '')}}" id="email" placeholder="Email" class="form-control" required><br>
+                                    
+                                    <label for="email" style="padding:0.5em;font-weight:bolder ;">Email</label>
+                                    <input type="email" name="email" value="{{old('name', $user->name ?? '')}}" id="email" placeholder="Email" class="form-control" required>
+                                    <label for="" style="padding:0.5em;font-weight:bolder ;"> Province / city</label>
                                     <select name="province_id" class="form-control" id="province">
-                                        <option value="">Select province / city</option>
+                                        <option value="">Select Province / city</option>
                                         @foreach($provinces as $province)
                                             <option {{old('province_id', $user->province_id ?? '') == $province->id ? 'selected' : ''}} value="{{$province->id}}">{{$province->name}}</option>
                                         @endforeach
-                                    </select><br>
-                                    <input type="text" value="{{old('house_number_street', $user->address ?? '')}}" name="house_number_street" id="address" placeholder="Address" class="form-control" required><br>
+                                    </select>
+                                    <label for="address" style="padding:0.5em;font-weight:bolder ;">Address</label>
+                                    <input type="text" value="{{old('house_number_street', $user->address ?? '')}}" name="house_number_street" id="address" placeholder="Address" class="form-control" required>
+                                    <label for="note" style="padding:0.5em;font-weight:bolder ;">Note</label>
                                     <input type="text" name="note" id="note" placeholder="Note" class="form-control"> <br>
 
                                     <div class="hinhthucthanhtoan">
@@ -62,7 +68,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="giohang" style="background-color: whitesmoke; padding: 1em;">
                             <div>
                                 <h1 style="text-align: center;">Your cart</h1>
@@ -76,7 +82,7 @@
                                     </div>
     
                                     <div class="col">
-                                        <div style="background-color: white; padding: 5px; height: 100%">
+                                        <div style="background-color: white; padding: 2em; height: 100%">
                                             <a style="font-size: 20px" href="{{route('frontend.product', $itm->attributes->slug)}}"><div>{{Str::limit($itm->name, 10, $end='...')}}</div></a>
                                             <label style="font-weight: bolder;">Color: </label> {{$itm->attributes->color}} <br>
                                             <label style="font-weight: bolder;">Size: </label> {{$itm->attributes->size}} <br>
@@ -89,14 +95,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div><br>
+                                    </div>
                                 </div>
-                                <br>
+                
                                 @endforeach
                             </div>
                           
 
-                            <div class="tinhtien" style="background-color: white; padding: 10px">
+                            <div class="tinhtien" style="background-color: white; padding: 1em">
                                 <div class="row">
                                     <div class="col">
                                         <label for="" style="font-weight: bolder;">Subtotal: </label>

@@ -52,7 +52,7 @@
                                         <tr>
                                             <th>Product</th>
                                             <th>Percentage</th>
-                                            <th>Active</th>
+                                            <th>Selection</th>
                                         </tr>
                                         </thead>
                                         <tbody>

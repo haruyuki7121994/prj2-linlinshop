@@ -35,7 +35,7 @@
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>Status</th>
-                                    <th>Active</th>
+                                    <th>Selection</th>
                                 </tr>
                                 </thead>
                                 <tbody>
