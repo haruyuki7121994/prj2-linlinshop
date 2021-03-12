@@ -11,7 +11,6 @@
             <div class="col-lg-4">
                 <div class="card mg-b-20">
                     <div class="card-body">
-                        @include('cms.layout.message')
                         <div class="main-content-label tx-13 mg-b-25">
                             Contact
                         </div>
@@ -116,7 +115,6 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-4 main-content-label">Update Password</div>
-                        @include('cms.layout.message')
                         <form class="form-horizontal" method="post" action="{{route('cms.profile.repassword')}}">
                             @csrf
                             <div class="form-group ">

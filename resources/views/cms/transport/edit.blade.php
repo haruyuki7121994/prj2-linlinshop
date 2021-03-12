@@ -3,7 +3,7 @@
     <!-- container -->
     <div class="container-fluid">
 
-        <x-breadcrumb category="Transport" action="Create" />
+        <x-breadcrumb category="Transport" action="Edit" />
 
         <!-- row -->
         <div class="row row-sm">
@@ -27,10 +27,10 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="number" name="price" value="{{old('price')}}" class="form-control" id="inputName" placeholder="Price">
+                                <input type="number" name="price" value="{{old('price', $transport->price)}}" class="form-control" id="inputName" placeholder="Price">
 
                             </div>
-                       
+
                             <div class="form-group mb-0 mt-3 justify-content-end">
                                 <div>
                                     <button type="submit" class="btn btn-primary">Update</button>

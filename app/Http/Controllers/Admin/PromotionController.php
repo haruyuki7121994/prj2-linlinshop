@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Cms\Promotion\CreateRequest;
 use App\Http\Requests\Cms\Category\UpdateRequest;
+use App\Product;
 use App\ProductAttribute;
 use App\Promotion;
 use Illuminate\Http\Request;
@@ -63,8 +64,12 @@ class PromotionController extends Controller
         return redirect()->back();
     }
 
-    public function remove(Request $request)
+    public function remove(Product $product, Request $request)
     {
-        dd($request->all());
+        $attrs = $product->productAttrs;
+        foreach ($attrs as $attr) {
+            $attr->update(['promotion_id' => null]);
+        }
+        return redirect()->back()->withSuccess('Delete promotion product successful!');
     }
 }

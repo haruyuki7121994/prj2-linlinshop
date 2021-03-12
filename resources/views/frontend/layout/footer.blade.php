@@ -1,3 +1,4 @@
+@php $footer = \App\Banner::where('position', 'Footer')->where('is_active', \App\Banner::ACTIVE)->first() @endphp
 <footer>
     <div style="background-color: black; padding: 1em;">
         <div class="container">
@@ -53,18 +54,7 @@
                         </nav>
                     </div>
 
-                    <div class="col-md-3">
-
-                        <p style="color: white; font-size: 1.2em;">FOLLOW US</p>
-                        <a style="padding: 0.5em;" href=""><i style="color:lightskyblue;"
-                                                              class="fa fa-facebook"></i></a>
-                        <a style="padding: 0.4em;" href=""><i style="color:lightpink;"
-                                                              class="fa fa-instagram"></i></a>
-                        <a style="padding: 0.2em;" href=""><i style="color:lightseagreen;"
-                                                              class="fa fa-twitter"></i></a>
-                        <a style="padding: 0.2em;" href=""><i style="color:white;" class="fab fa-tiktok"></i></a>
-
-                    </div>
+                    @if($footer) {!! $footer->image_url !!} @endif
 
                 </div>
             </div>

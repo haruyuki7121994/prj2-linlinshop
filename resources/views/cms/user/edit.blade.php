@@ -11,7 +11,6 @@
             <div class="col-lg-4">
                 <div class="card mg-b-20">
                     <div class="card-body">
-                        @include('cms.layout.message')
 
                         <div class="main-content-label tx-13 mg-b-25">
                             Contact

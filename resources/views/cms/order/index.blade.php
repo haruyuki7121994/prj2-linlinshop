@@ -12,10 +12,10 @@
             <div class="col-xl-12">
 
                 <div class="card">
-                    <div>
-                        <div class="col-lg-4" style="margin-top: 20px"><a href="order_detail.html"><button class="btn btn-primary">Create</button></a></div>
+{{--                    <div>--}}
+{{--                        <div class="col-lg-4" style="margin-top: 20px"><a href="order_detail.html"><button class="btn btn-primary">Create</button></a></div>--}}
 
-                    </div>
+{{--                    </div>--}}
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
                             <h4 class="card-title mg-b-0">Order Table</h4>

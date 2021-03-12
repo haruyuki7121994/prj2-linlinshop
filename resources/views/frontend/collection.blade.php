@@ -1,12 +1,11 @@
 @extends('frontend.layout.master')
 @section('content')
+    @php $header = \App\Banner::where('position', 'Header')->where('is_active', \App\Banner::ACTIVE)->first() @endphp
     <section>
         <div class="container">
             <div class="sanpham">
                 <div class="col-md-12">
-                    <marquee style="color: black; background-color:white; margin: auto; border-radius: 1em;">- - - - Welcome to our store. Wish
-                        you have a happy and happy shopping day. Thank you
-                        - - - - </marquee>
+                    @if($header) {!! $header->image_url !!} @endif
                     <div style="display: block;background-color: black; padding: 0.5em; ">
                         <h1 style="text-align: center; font-size: 2em; color: white; font-weight: bolder;">{{$category->name ?? $category}}</h1>
                     </div>

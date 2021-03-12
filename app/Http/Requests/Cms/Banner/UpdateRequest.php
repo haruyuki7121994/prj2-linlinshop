@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Cms\Profile;
+namespace App\Http\Requests\Cms\Banner;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -9,9 +9,9 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'mobile' => 'required',
-            'address' => 'required',
+            'position' => 'required',
+            'image_url' => 'required',
+            'is_active' => 'required|in:0,1'
         ];
     }
 
@@ -19,6 +19,4 @@ class UpdateRequest extends FormRequest
     {
         return true;
     }
-
-
 }

@@ -11,7 +11,7 @@ class CreateBannerTable extends Migration
         Schema::create('banners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('position')->nullable();
-            $table->string('image_url')->nullable();
+            $table->text('image_url')->nullable();
             $table->tinyInteger('is_active')->default(0)->comment('0:inactive, 1:active');
             //
 

@@ -11,6 +11,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        \DB::table('users')->truncate();
         //Admin
         $admin = \App\User::whereIsAdmin(\App\User::IS_ADMIN)->first();
         if (!$admin)

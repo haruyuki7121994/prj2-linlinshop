@@ -36,7 +36,7 @@ Route::bind('code', function ($key) {
     return \App\User::whereIsActive(\App\User::INACTIVE)->whereRememberToken($key)->first() ?? abort(404);
 });
 Route::bind('user', function ($key) {
-    return \App\User::with('orders')->whereId($key)->IsActive()->first() ?? abort(404);
+    return \App\User::with('orders')->whereId($key)->first() ?? abort(404);
 });
 
 //frontend
@@ -91,7 +91,7 @@ Route::group(['prefix' => 'cms', 'as' => 'cms.', 'middleware' => 'admin'], funct
     Route::resource('order', 'Admin\OrderController')->except(['show']);
     Route::resource('promotion', 'Admin\PromotionController');
     Route::post('/promotion/{promotion}/add', [\App\Http\Controllers\Admin\PromotionController::class, 'add'])->name('promotion.add');
-    Route::post('/promotion/remove', [\App\Http\Controllers\Admin\PromotionController::class, 'remove'])->name('promotion.remove');
+    Route::delete('/promotion/remove/{product}', [\App\Http\Controllers\Admin\PromotionController::class, 'remove'])->name('promotion.remove');
     Route::resource('province', 'Admin\ProvinceController')->except(['show']);
     Route::resource('size', 'Admin\SizeController')->except(['show']);
     Route::resource('transport', 'Admin\TransportController')->except(['show']);

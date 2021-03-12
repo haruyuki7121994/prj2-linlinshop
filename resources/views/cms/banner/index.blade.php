@@ -30,59 +30,33 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Position</th>
-                                    <th>Image</th>
                                     <th>Active</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Header 1</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Footer 1</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Header 2</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Footer 2</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Default</td>
-                                    <td><img src="https://via.placeholder.com/150" alt=""></td>
-                                    <td>
-                                        <button class="btn btn-success" style="width: 50px"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach($banners as $banner)
+                                    <tr>
+                                        <th scope="row">{{$banner->id}}</th>
+                                        <td>{{$banner->position}}</td>
+                                        <td>
+                                            @if($banner->is_active == \App\Product::IS_FEATURED)
+                                                <a class="badge badge-success" href="#">Yes</a>
+                                            @else
+                                                <a class="badge badge-danger" href="#">No</a>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <x-button classType="success">
+                                                <x-slot name="action"><i class="fa fa-eye"></i></x-slot>
+                                                {{route('cms.banner.edit', $banner->id)}}
+                                            </x-button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- bd -->
+                        {{ $banners->links() }}
                     </div><!-- bd -->
                 </div><!-- bd -->
             </div>

@@ -13,8 +13,7 @@
                         <h4 class="card-title mb-1">List Product of Promotion</h4>
                     </div>
                     <div class="card-body pt-0">
-                        <form class="form-horizontal" >
-
+                        @include('cms.layout.message')
                             <div class="form-group">
                                 <input type="text" class="form-control" id="inputName" placeholder="Name" value="{{$promotion->name}}" disabled>
                             </div>
@@ -62,7 +61,9 @@
                                             <td>{{$product->product->name}}</td>
                                             <td>{{$promotion->percentage}}%</td>
                                             <td>
-                                                <button class="btn btn-danger" style="width: 50px"><i class="fa fa-trash"></i></button>
+                                                <x-delete-form>
+                                                    {{route('cms.promotion.remove', $product->product->id)}}
+                                                </x-delete-form>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -77,7 +78,6 @@
                                     <button type="submit" class="btn btn-secondary">Back</button>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

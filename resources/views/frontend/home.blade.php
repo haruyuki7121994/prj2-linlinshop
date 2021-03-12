@@ -1,14 +1,10 @@
 @extends('frontend.layout.master')
 @section('content')
+@php $header = \App\Banner::where('position', 'Header')->where('is_active', \App\Banner::ACTIVE)->first() @endphp
 <section>
     <div class="container">
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <marquee style="color: black; background-color:white; margin: auto; border-radius: 1em;">- - - - Welcome
-                to our store. Wish
-                you have a happy and happy shopping day. Thank you
-                - - - - </marquee>
-        </div>
+        @if($header) {!! $header->image_url !!} @endif
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div style="display: block; background-color: black; padding: 0.5em;">
@@ -107,13 +103,13 @@
         <div class="hinhchay">
             <div class="col-md-12">
                 <x-breadcrumb category="WOMEN'S CLOTHING" action="{{route('frontend.all', ['category' => 'clothes'])}}" view="homepage"/>
-                <div class="row"> 
+                <div class="row">
                     <x-representative-products class="col-md-2"  :itms="$clothes"/>
                 </div>
             </div>
         </div>
         <br>
-        
+
         <div class="hinhchay">
             <div class="col-md-12">
                 <div class="row">
@@ -130,11 +126,11 @@
                         </div>
                     </div>
                 </div>
-            
+
             </div>
         </div>
         <br>
-        
+
         <div class="hinhchay">
             <div class="col-md-12">
                 <x-breadcrumb category="ACCESSORIES FOR WOMEN" action="{{route('frontend.all', ['category' => 'accessories'])}}" view="homepage"/>
