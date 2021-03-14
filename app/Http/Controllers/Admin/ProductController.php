@@ -120,4 +120,14 @@ class ProductController extends Controller
             DB::rollback();
         }
     }
+
+    public function destroy(Product $product)
+    {
+        $attrs = $product->productAttrs;
+        foreach ($attrs as $attr) {
+            $attr->delete();
+        }
+        $product->delete();
+        return redirect()->route('cms.product.index')->withSuccess('Delete product successful!');
+    }
 }

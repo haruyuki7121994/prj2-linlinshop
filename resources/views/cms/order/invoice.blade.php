@@ -56,7 +56,6 @@
                                     <thead>
                                     <tr>
                                         <th class="wd-20p">Product</th>
-                                        <th class="wd-40p">Description</th>
                                         <th class="tx-center">QTY</th>
                                         <th class="tx-right">Unit Price</th>
                                         <th class="tx-right">Amount</th>
@@ -67,7 +66,6 @@
                                         @php $attr = $itm->productAttr @endphp
                                     <tr>
                                         <td>{{$attr->product->name}} ({{$attr->size->name}}-{{$attr->color->name}})</td>
-                                        <td class="tx-12">{{$attr->product->description}}</td>
                                         <td class="tx-center">{{$itm->qty}}</td>
                                         @php $realPrice = $attr->getPromotionPrice() @endphp
                                         <td class="tx-right">
